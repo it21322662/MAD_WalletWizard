@@ -6,7 +6,6 @@
     android:id="@+id/bgcolour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
 
     android:orientation="vertical">
 
@@ -15,7 +14,8 @@
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="197dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/Steel_Blue">
 
         <View
             android:id="@+id/imageofadd"
@@ -40,7 +40,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shapes"
+
         android:orientation="horizontal">
 
         <TextView
@@ -83,7 +83,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background"
+
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
@@ -133,7 +133,7 @@
                         android:layout_marginEnd="6dp"
                         android:layout_marginRight="10dp"
                         android:height="48dp"
-                        android:background="@drawable/shapes"
+
                         android:hint="enter amount"
                         android:minWidth="48dp"
                         android:minHeight="48dp"
@@ -146,7 +146,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background"
+
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -191,7 +191,7 @@
                         android:layout_marginEnd="9dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/shapes"
+
                         android:hint="enter type"
                         android:minWidth="48dp"
                         android:minHeight="48dp"
@@ -204,7 +204,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background"
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
@@ -253,7 +252,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:height="48dp"
-                        android:background="@drawable/shapes"
                         android:hint="enter note"
                         android:textSize="20sp" />
 
@@ -264,7 +262,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background"
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
@@ -280,16 +277,15 @@
                         android:id="@+id/expenseSave"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginBottom="0dp"
-                        android:background="@drawable/shapes"
-                        android:text="@string/save" />
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/Steel_Blue"
+                        android:text="@string/save"
+                         />
 
                 </RelativeLayout>
 
