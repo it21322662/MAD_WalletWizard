@@ -12,7 +12,10 @@
         android:theme="@style/Theme.WalletWizard"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ExpensesManage"
+            android:exported="false" />
+        <activity
+            android:name=".DataRetriveExpenses"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
