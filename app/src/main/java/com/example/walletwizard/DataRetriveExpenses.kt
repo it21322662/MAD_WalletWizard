@@ -2,6 +2,8 @@ package com.example.walletwizard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+
 
 //class DataRetriveExpenses : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +16,16 @@ import android.os.Bundle
 //            super.onCreate(savedInstanceState)
 //            setContentView(R.layout.addexpenses)
 //        }
-        class DataRetriveExpenses : AppCompatActivity() {
+@Suppress("DEPRECATION")
+class DataRetriveExpenses : AppCompatActivity() {
             override fun onCreate(savedInstanceState: Bundle?) {
 
                 super.onCreate(savedInstanceState)
+
+                //Remove Action Bar/Title Bar
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                supportActionBar?.hide()
+
                 setContentView(R.layout.expenses_update)
             }
 }
