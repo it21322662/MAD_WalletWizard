@@ -52,7 +52,7 @@
             android:id="@+id/display"
             android:layout_width="match_parent"
             android:layout_height="134dp"
-            android:background="@drawable/background"
+            android:background="@color/Steel_Blue"
             android:orientation="vertical">
 
             <TextView
