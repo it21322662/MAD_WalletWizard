@@ -204,7 +204,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/add_income"
+                        app:srcCompat="@drawable/expenses"
                         app:tint="@color/Steel_Blue" />
                 </RelativeLayout>
 
