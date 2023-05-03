@@ -26,4 +26,7 @@
     <color name="color_two">#E3E0E0</color>
     <color name="R">#FFA726</color>
     <color name="Java">#29B6F6</color>
+    <color name="textMain">#292929</color>
+    <color name="green">#43A043</color>
+    <color name="red">#EE4B2B</color>
 </resources>

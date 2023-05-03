@@ -10,6 +10,9 @@
     <string name="UpdateExpenses">Update Expenses</string>
     <string name="UPDATE">UPDATE</string>
     <string name="DELETE">DELETE</string>
+    <string name="title_activity_add_transaction">AddTransactionActivity</string>
+    <string name="addbtn">button</string>
+    <string name="closebtn">imagebutton</string>
 
 
 </resources>
