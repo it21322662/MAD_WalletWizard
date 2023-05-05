@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".AddExpenses"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -184,7 +186,6 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:text="Note"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="19dp"
@@ -194,7 +195,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
 
-                        />
+                        android:text="Note" />
 
                 </RelativeLayout>
 
@@ -213,7 +214,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        tools:ignore="DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </RelativeLayout>
 
