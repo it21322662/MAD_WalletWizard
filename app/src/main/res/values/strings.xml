@@ -13,6 +13,6 @@
     <string name="title_activity_add_transaction">AddTransactionActivity</string>
     <string name="addbtn">button</string>
     <string name="closebtn">imagebutton</string>
-
-
+    <string name="logout_desc">logout</string>
+    <string name="list_tot_amount_def">list_tot_amount_def</string>
 </resources>
