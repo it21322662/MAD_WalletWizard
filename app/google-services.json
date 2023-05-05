@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "413007591881",
+    "project_id": "walletwizard-678fb",
+    "storage_bucket": "walletwizard-678fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413007591881:android:2068f7b02a31dd21ae1018",
+        "android_client_info": {
+          "package_name": "com.example.walletwizard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413007591881-9kmr7t5pmnqperajk0hs4vpuv29n0d38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAijD68xexTP2lOMkqJbIgnjZ6jSfqGDwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413007591881-9kmr7t5pmnqperajk0hs4vpuv29n0d38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
