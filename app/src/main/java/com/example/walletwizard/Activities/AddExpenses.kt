@@ -1,5 +1,6 @@
 package com.example.walletwizard.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -40,6 +41,12 @@ class AddExpenses : AppCompatActivity() {
             saveExpenses()
         }
     }
+    private fun validateFields(expensesAmount: String, expensesNote: String, expensesType: String): Boolean {
+        if (expensesAmount.isEmpty() || expensesNote.isEmpty() || expensesType.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
 
     private fun saveExpenses() {
         //getting Values
@@ -58,7 +65,10 @@ class AddExpenses : AppCompatActivity() {
         if (expensesType.isEmpty()) {
             type.error = "Please enter type"
              }
-
+        if (!validateFields(expensesAmount,expensesNote,expensesType)){
+            Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
+            return;
+        }
         val expensesId = dbRef.push().key!!
         val expenses = expensesModel(expensesId, expensesAmount, expensesNote, expensesType)
        dbRef.child(expensesId).setValue(expenses)
