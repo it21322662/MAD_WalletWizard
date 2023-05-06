@@ -148,6 +148,20 @@
                 android:layout_marginBottom="1dp"
                 android:background="@color/Snow"/>
 
+            <TextView
+                android:id="@+id/exLoadingData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading Data....."
+                android:textSize="28sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </LinearLayout>
 
