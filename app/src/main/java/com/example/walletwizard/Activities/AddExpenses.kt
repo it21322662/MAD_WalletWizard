@@ -1,4 +1,4 @@
-package com.example.walletwizard
+package com.example.walletwizard.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.walletwizard.Models.expensesModel
+import com.example.walletwizard.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -28,9 +29,9 @@ class AddExpenses : AppCompatActivity() {
 
         setContentView(R.layout.add_expenses)
 
-        amount = findViewById(R.id.amount_add)
-        type = findViewById(R.id.type_add)
-        note = findViewById(R.id.note_add)
+        amount = findViewById(R.id.etamount)
+        type = findViewById(R.id.ettype)
+        note = findViewById(R.id.etnote)
         addbtn = findViewById(R.id.expenseSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
@@ -42,7 +43,6 @@ class AddExpenses : AppCompatActivity() {
 
     private fun saveExpenses() {
         //getting Values
-
         val expensesAmount = amount.text.toString()
         val expensesNote = note.text.toString()
         val expensesType = type.text.toString()
