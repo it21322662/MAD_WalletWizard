@@ -17,9 +17,9 @@ import com.example.walletwizard.R.id.ettype
 import com.google.firebase.database.FirebaseDatabase
 
 class ExpensesDetailsActivity : AppCompatActivity() {
-    private lateinit var tvamount: TextView
-    private lateinit var tvtype: TextView
-    private lateinit var tvnote: TextView
+    private lateinit var amount_add: TextView
+    private lateinit var type_add: TextView
+    private lateinit var note_add: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -51,18 +51,21 @@ class ExpensesDetailsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        tvamount = findViewById(R.id.tvamount)
-        tvtype = findViewById(R.id.tvtype)
-        tvnote = findViewById(R.id.tvnote)
+        amount_add = findViewById(R.id.amount_add)
+        type_add = findViewById(R.id.type_add)
+        note_add = findViewById(R.id.note_add)
 
         btnUpdate = findViewById(R.id.btnUpdate_expense)
         btnDelete = findViewById(R.id.btnDelete_expense)
     }
 
     private fun setValuesToViews() {
-        tvamount.text = intent.getStringExtra("expAmount")
-        tvtype.text = intent.getStringExtra("expType")
-        tvnote.text = intent.getStringExtra("expNote")
+
+        println("catch values  ::::::::::::"+ intent.getStringExtra("expensesId"))
+
+        amount_add.text = intent.getStringExtra("expensesAmt")
+        type_add.text = intent.getStringExtra("expensesType")
+        note_add.text = intent.getStringExtra("expensesNote")
 
     }
 
@@ -98,9 +101,9 @@ class ExpensesDetailsActivity : AppCompatActivity() {
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etamount.setText(intent.getStringExtra("examount").toString())
-        ettype.setText(intent.getStringExtra("extype").toString())
-        etnote.setText(intent.getStringExtra("exnote").toString())
+        etamount.setText(intent.getStringExtra("expensesAmt").toString())
+        ettype.setText(intent.getStringExtra("expensesType").toString())
+        etnote.setText(intent.getStringExtra("expensesNote").toString())
 
         mDialog.setTitle("Updating $empId Record")
 
@@ -118,9 +121,9 @@ class ExpensesDetailsActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Expenses Data Updated", Toast.LENGTH_LONG).show()
 
             //we are setting updated data to our textviews
-            tvamount.text = etamount.text.toString()
-            tvtype.text = ettype.text.toString()
-            tvnote.text = etnote.text.toString()
+            amount_add.text = etamount.text.toString()
+            type_add.text = ettype.text.toString()
+            note_add.text = etnote.text.toString()
 
             alertDialog.dismiss()
         }

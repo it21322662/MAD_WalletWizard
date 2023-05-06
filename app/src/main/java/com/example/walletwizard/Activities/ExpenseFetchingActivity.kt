@@ -28,9 +28,9 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var tvLoadingData: TextView
     private lateinit var empList: ArrayList<expensesModel>
     private lateinit var dbRef: DatabaseReference
-
     private lateinit var main : ImageView
     private  lateinit var add : FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -76,7 +76,9 @@ class ExpenseFetchingActivity : AppCompatActivity() {
                 empList.clear()
                 if (snapshot.exists()){
                     for (empSnap in snapshot.children){
+                        val expenseId = empSnap.key
                         val empData = empSnap.getValue(expensesModel::class.java)
+                        println("expenseId : --------------------"+ expenseId+ " "+ empData);
                         empList.add(empData!!)
                     }
                     val mAdapter = ExpAdapter(empList)
@@ -84,13 +86,14 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
                     mAdapter.setOnItemClickListener(object : ExpAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
-
+                            println(position)
                             val intent = Intent(this@ExpenseFetchingActivity, ExpensesDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("expensesAmount", empList[position].expensesAmount)
+                            intent.putExtra("expensesId", empList[position].expensesId)
                             intent.putExtra("expensesType", empList[position].expensesType)
                             intent.putExtra("expensesNote", empList[position].expensesNote)
+                            intent.putExtra("expensesAmt", empList[position].expensesAmount)
                             startActivity(intent)
                         }
 
@@ -107,4 +110,5 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
         })
     }
+
 }

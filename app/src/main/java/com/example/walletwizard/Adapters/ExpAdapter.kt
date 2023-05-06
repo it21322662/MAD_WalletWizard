@@ -9,7 +9,7 @@ import com.example.walletwizard.Models.expensesModel
 import com.example.walletwizard.R
 import java.util.ArrayList
 
-class ExpAdapter (private val empList: ArrayList<expensesModel>) :
+class ExpAdapter(private val empList: ArrayList<expensesModel>) :
     RecyclerView.Adapter<ExpAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
