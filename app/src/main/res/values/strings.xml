@@ -1,15 +1,32 @@
 <resources>
     <string name="app_name">WalletWizard</string>
-    <string name="AddExpenses">Add Expenses</string>
-    <string name="Amount">Amount</string>
-    <string name="Type">Type</string>
-    <string name="Note">Note</string>
-    <string name="save">save</string>
-    <string name="Total_Expenses">Total Expenses</string>
-    <string name="TotalExpenses">Total Expenses</string>
-    <string name="UpdateExpenses">Update Expenses</string>
-    <string name="UPDATE">UPDATE</string>
-    <string name="DELETE">DELETE</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgetpassword">Forget Password</string>
+    <string name="singup">Do not have an account? <font colour="@colour/purple_500"><b>Sing Up</b></font></string>
 
+    + / Add new item
+    <string name="home">Shopping Cart</string>
+    <string name="bcarrow">Back Arrow</string>
+    <string name="addi">Add New Item</string>
+    <string name="iname">Item name</string>
+    <string name="iquantity">Quantity</string>
+    <string name="iprice">Price</string>
+    <string name="idate"><font textsize="15dp">Date</font></string>
+    <string name="iadd">Add</string>
+    <string name="iedit">Save</string>
 
+    +/ edite list
+    <string name="etext">Edit List</string>
+
+    +/ View List
+    <string name="vlist">Your List</string>
+    <string name="vddi">Add New Item</string>
+    <string name="vname">Item name</string>
+    <string name="vquantity">Quantity</string>
+    <string name="vprice">Price</string>
+    <string name="vdate">Date</string>
+    <string name="vdelete">Delete</string>
+    <string name="vtcost">Total Cost</string>
 </resources>

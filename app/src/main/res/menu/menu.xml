@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:id="@+id/expens"
+        android:icon="@drawable/money"
+        android:title="" />
+
+    <item android:id="@+id/additem"
+        android:icon="@drawable/shopping"
+        android:title="" />
+
+    <item android:id="@+id/home2"
+        android:icon="@drawable/home1"
+        android:title="" />
+
+    <item android:id="@+id/money2"
+        android:icon="@drawable/money2"
+        android:title="" />
+
+    <item android:id="@+id/moneyd"
+        android:icon="@drawable/caal"
+        android:title="" />
+
+</menu>
