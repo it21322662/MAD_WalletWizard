@@ -70,10 +70,10 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
 
 
-        var budgetValue =00.00;
-        var expenses = 00.00;
+        var budgetValue =0.0;
+        var expenses = 0.0;
 
-        var total =00.00;
+        var total =0.0;
 
         calculateExpenses { exp ->
             run {
@@ -91,7 +91,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     }
 
     private fun calculateBudget(callback: (Double) -> Unit) {
-        var sum = 00.00
+        var sum = 0.0
 
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
         var expenseQuery = dbRef.orderByChild("expensesAmount").startAt("-")
@@ -119,7 +119,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         })
     }
         private fun calculateExpenses(callback: (Double) -> Unit) {
-            var sum = 00.00
+            var sum = 0.0
 
             dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
             var expenseQuery = dbRef.orderByChild("expensesAmount").startAt("+")
