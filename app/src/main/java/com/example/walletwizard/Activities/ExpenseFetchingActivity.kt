@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.Adapters.ExpAdapter
 import com.example.walletwizard.Models.expensesModel
 import com.example.walletwizard.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -27,6 +29,8 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var empList: ArrayList<expensesModel>
     private lateinit var dbRef: DatabaseReference
 
+    private lateinit var main : ImageView
+    private  lateinit var add : FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,6 +39,19 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_expense)
+
+        main = findViewById(R.id.imageView9)
+        add = findViewById(R.id.fab)
+
+        main.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        add.setOnClickListener {
+            val intent = Intent(this, AddExpenses::class.java)
+            startActivity(intent)
+        }
 
         empRecyclerView = findViewById(R.id.receive)
         empRecyclerView.layoutManager = LinearLayoutManager(this)

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddExpenses"
+    tools:context=".Activities.AddExpenses"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="197dp"
-        android:background="@color/Steel_Blue"
+        android:background="@color/teal_700"
         android:orientation="vertical"
         tools:ignore="ExtraText">
 
@@ -77,7 +77,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/Steel_Blue"
+                android:background="@color/teal_700"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Add Expense"
@@ -105,7 +105,9 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:padding="5dp"
-                        android:text="Amount" />
+                        android:text="Amount"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -117,6 +119,7 @@
                         android:id="@+id/etamount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="Enter Amount"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -149,7 +152,9 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:padding="5dp"
-                        android:text="Type" />
+                        android:text="Type"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -160,6 +165,7 @@
 
                     <EditText
                         android:id="@+id/ettype"
+                        android:hint="Enter Type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -169,7 +175,6 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
                 </RelativeLayout>
 
             </LinearLayout>
@@ -195,7 +200,9 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
 
-                        android:text="Note" />
+                        android:text="Note"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -206,6 +213,7 @@
 
                     <EditText
                         android:id="@+id/etnote"
+                        android:hint="Enter a Word to Display"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -242,9 +250,9 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@color/Steel_Blue"
+                        android:backgroundTint="@color/teal_700"
                         android:text="save"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFF" />
 
                 </RelativeLayout>
 

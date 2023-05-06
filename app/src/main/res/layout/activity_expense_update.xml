@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Snow"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activities.ExpensesDetailsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="197dp"
-        android:background="@color/Steel_Blue"
+        android:background="@color/teal_700"
         android:orientation="vertical"
         tools:ignore="ExtraText">
 
@@ -77,7 +78,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/Steel_Blue"
+                android:background="@color/teal_700"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Update Expense"
@@ -104,7 +105,10 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="Amount" />
+                        android:text="Amount"
+
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -149,7 +153,9 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="Type" />
+                        android:text="Type"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -195,7 +201,9 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Note" />
+                        android:text="Note"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -241,9 +249,9 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@color/Steel_Blue"
+                        android:backgroundTint="@color/teal_700"
                         android:text="@string/common_google_play_services_update_button"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFF" />
 
                 </RelativeLayout>
 
@@ -262,9 +270,9 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@color/Steel_Blue"
+                        android:backgroundTint="@color/teal_700"
                         android:text="Delete"
-                        android:textColor="#000000" />
+                        android:textColor="#FFFF" />
 
                 </RelativeLayout>
             </LinearLayout>
