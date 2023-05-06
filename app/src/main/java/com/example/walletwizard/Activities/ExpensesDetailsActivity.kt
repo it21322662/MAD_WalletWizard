@@ -38,13 +38,13 @@ class ExpensesDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("expensesId").toString()
             )
         }
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("expensesId").toString()
             )
         }
 
@@ -112,7 +112,7 @@ class ExpensesDetailsActivity : AppCompatActivity() {
 
         btnUpdateData.setOnClickListener {
             updateEmpData(
-                empId,
+                intent.getStringExtra("expensesId").toString(),
                 etamount.text.toString(),
                 ettype.text.toString(),
                 etnote.text.toString()
