@@ -43,16 +43,16 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
         empList = arrayListOf<expensesModel>()
 
-        getEmployeesData()
+        getExpensesData()
 
     }
 
-    private fun getEmployeesData() {
+    private fun getExpensesData() {
 
         empRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Employees")
+        dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
