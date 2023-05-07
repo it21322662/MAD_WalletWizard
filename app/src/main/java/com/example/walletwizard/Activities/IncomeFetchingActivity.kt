@@ -27,6 +27,7 @@ class IncomeFetchingActivity : AppCompatActivity() {
     private lateinit var empList: ArrayList<incomeModel>
     private lateinit var dbRef: DatabaseReference
     private lateinit var main : ImageView
+    private lateinit var  mainincome : ImageView
     private  lateinit var add : FloatingActionButton
     private  lateinit var income : TextView
 
@@ -43,14 +44,20 @@ class IncomeFetchingActivity : AppCompatActivity() {
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
         income =findViewById(R.id.income)
+        mainincome = findViewById(R.id.imageView8)
 
         main.setOnClickListener {
-            val intent = Intent(this, IncomeMainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
         add.setOnClickListener {
             val intent = Intent(this, AddIncome::class.java)
+            startActivity(intent)
+        }
+
+        mainincome.setOnClickListener {
+            val intent = Intent(this, IncomeMainActivity::class.java)
             startActivity(intent)
         }
 
@@ -97,7 +104,7 @@ class IncomeFetchingActivity : AppCompatActivity() {
         empRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("income")
+        dbRef = FirebaseDatabase.getInstance().getReference("Income")
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
