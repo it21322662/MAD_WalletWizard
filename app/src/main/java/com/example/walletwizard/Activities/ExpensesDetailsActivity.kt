@@ -78,7 +78,7 @@ class ExpensesDetailsActivity : AppCompatActivity() {
         mTask.addOnSuccessListener {
             Toast.makeText(this, "Expenses data deleted", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, ExpenseFetchingActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{ error ->
@@ -124,6 +124,10 @@ class ExpensesDetailsActivity : AppCompatActivity() {
             amount_add.text = etamount.text.toString()
             type_add.text = ettype.text.toString()
             note_add.text = etnote.text.toString()
+
+            val intent = Intent(this, MainActivity::class.java)
+            finish()
+            startActivity(intent)
 
             alertDialog.dismiss()
         }
