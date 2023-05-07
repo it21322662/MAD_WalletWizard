@@ -29,7 +29,7 @@ class IncomeFetchingActivity : AppCompatActivity() {
     private lateinit var main : ImageView
     private lateinit var  mainincome : ImageView
     private  lateinit var add : FloatingActionButton
-    private  lateinit var income : TextView
+    private  lateinit var incomecal : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +43,8 @@ class IncomeFetchingActivity : AppCompatActivity() {
 
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
-        income =findViewById(R.id.income)
         mainincome = findViewById(R.id.imageView8)
+        incomecal = findViewById(R.id.income)
 
         main.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -71,25 +71,29 @@ class IncomeFetchingActivity : AppCompatActivity() {
         getincomeData()
 
         var income = 0.0;
+
+        calculateIncome(
+            onTotalIncomeCalculated = { incomeSum -> incomecal.text = incomeSum.toString()}
+        )
     }
 
-    private fun calculateincome(callback: (Double) -> Unit) {
+    private fun calculateIncome(onTotalIncomeCalculated: (Double) -> Unit) {
         var sum = 0.0
 
-        dbRef = FirebaseDatabase.getInstance().getReference("income")
-        var incomeQuery = dbRef.orderByChild("incomeAmount").startAt("+")
+        dbRef = FirebaseDatabase.getInstance().getReference("Income")
+        var incomeQuery = dbRef.orderByChild("incomeAmount")
         incomeQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // Loop through the data and add the amounts with prefix "+"
                 for (incomeSnapshot in snapshot.children) {
                     val amount = incomeSnapshot.child("incomeAmount").getValue(String::class.java)
-                    if (amount?.startsWith("+") == true) {
-
-                        sum += amount.substring(1).toDouble()
+                    if (amount !== null) {
+                        sum += amount.toDouble()
                     }
                 }
                 // Todo:
                 println("Sum of income with prefix \"+\": $sum")
+                onTotalIncomeCalculated(sum)
             }
 
             override fun onCancelled(error: DatabaseError) {
