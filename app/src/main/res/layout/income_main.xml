@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundexp"
-    tools:context=".activities.MainActivity"
+    android:background="@drawable/incomebg"
+    tools:context=".activities.IncomeMainActivity"
     >
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="Expenses"
+        android:text="INCOME"
         android:textColor="@color/black"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -24,11 +24,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:id="@+id/btnInsertData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Expenses"
+        android:text="Add income"
         android:layout_marginTop="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +36,10 @@
 
     <Button
         android:id="@+id/btnFetchData"
-        android:layout_width="124dp"
-        android:layout_height="57dp"
+        android:layout_width="133dp"
+        android:layout_height="52dp"
         android:layout_marginTop="75dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="View All"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
