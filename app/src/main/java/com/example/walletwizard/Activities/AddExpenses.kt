@@ -79,6 +79,11 @@ class AddExpenses : AppCompatActivity() {
            amount.text.clear()
            note.text.clear()
            type.text.clear()
+
+           val intent = Intent(this, MainActivity::class.java)
+           finish()
+           startActivity(intent)
+
        }.addOnFailureListener { err ->
 
         Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
