@@ -1,6 +1,5 @@
 package com.example.walletwizard.Activities
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -21,7 +20,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.ArrayList
-import kotlin.math.exp
 
 class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var empRecyclerView: RecyclerView
@@ -31,6 +29,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var main : ImageView
     private  lateinit var add : FloatingActionButton
     private  lateinit var expense : TextView
+    private lateinit var  income : ImageView
     private  lateinit var budget : TextView
     private lateinit var balance : TextView
 
@@ -46,6 +45,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
         expense =findViewById(R.id.expense)
+        income = findViewById(R.id.imageView8)
         budget = findViewById(R.id.budget)
         balance = findViewById(R.id.balance)
 
@@ -56,6 +56,11 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
         add.setOnClickListener {
             val intent = Intent(this, AddExpenses::class.java)
+            startActivity(intent)
+        }
+
+        income.setOnClickListener {
+            val intent = Intent(this, IncomeMainActivity::class.java)
             startActivity(intent)
         }
 

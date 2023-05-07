@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ExpenseFetchingActivity"
+    tools:context=".Activities.IncomeFetchingActivity"
     >
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -19,7 +19,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:background="@color/teal_700"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
                 <RelativeLayout
 
@@ -34,24 +34,7 @@
                         android:orientation="vertical"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="18dp"
-                        tools:ignore="ExtraText">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Total Balance"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textSize="20sp"
-                            android:textColor="#FFFF"/>
-                        <TextView
-                            android:id="@+id/balance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rs 9650"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
-                            android:textColor="#FFFF"/>/>
-                    </LinearLayout>
+                        tools:ignore="ExtraText"/>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/dashboard"
@@ -77,40 +60,21 @@
                                 android:layout_weight="0.5"
                                 android:gravity="center">
                                 <TextView
-                                    android:id="@+id/budget"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Rs 10000"
+                                    android:text="TOTAL INCOME"
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp"
+                                    android:textAllCaps="true"/>
+                                <TextView
+                                    android:id="@+id/income"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs 0.0"
                                     android:textStyle="bold"
                                     android:textSize="32sp"
                                     android:textColor="@color/green"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Budget"
-                                    android:textSize="17sp"
-                                    android:textAllCaps="true"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_weight="0.5"
-                                android:gravity="center">
-                                <TextView
-                                    android:id="@+id/expense"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Rs 350"
-                                    android:textStyle="bold"
-                                    android:textSize="32sp"
-                                    android:textColor="@color/red"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Expense"
-                                    android:textSize="17sp"
-                                    android:textAllCaps="true"/>
+
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -233,7 +197,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="15dp"
-            android:backgroundTint="@color/teal_700"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:scaleX="1.25"
             android:scaleY="1.25"
             android:src="@drawable/add1"
@@ -270,6 +234,7 @@
                         android:id="@+id/imageView8"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_centerInParent="true"
                         app:srcCompat="@drawable/ic_income"
                         app:tint="@color/Steel_Blue" />
                 </RelativeLayout>
