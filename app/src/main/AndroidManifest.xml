@@ -11,14 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WalletWizard"
         tools:targetApi="31">
+        <activity android:name=".Activities.AddExpenses" />
+        <activity android:name=".Activities.ExpenseFetchingActivity" />
+        <activity android:name=".Activities.ExpensesDetailsActivity" />
+        <activity android:name=".Activities.AddIncome" />
+        <activity android:name=".Activities.IncomeFetchingActivity" />
+        <activity android:name=".Activities.IncomeDetailsActivity" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.IncomeMainActivity" />
         <activity
-            android:name=".Activities.AddExpenses"/>
-        <activity
-            android:name=".Activities.ExpenseFetchingActivity"/>
-        <activity
-            android:name=".Activities.ExpensesDetailsActivity"/>
-        <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.InExMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

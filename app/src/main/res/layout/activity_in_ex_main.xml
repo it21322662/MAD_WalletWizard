@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundexp"
-    tools:context=".activities.MainActivity"
+    android:background="@drawable/inexback"
+    tools:context=".activities.InExMainActivity"
     >
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="Expenses"
+        android:text="WalletWizard"
         android:textColor="@color/black"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -24,26 +24,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:backgroundTint="@color/teal_700"
-        android:id="@+id/btnInsertData"
+        android:id="@+id/btnExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Expenses"
         android:layout_marginTop="75dp"
+        android:backgroundTint="@color/Steel_Blue"
+        android:text="Expenses"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/btnFetchData"
-        android:layout_width="124dp"
-        android:layout_height="57dp"
+        android:id="@+id/btnIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="View All"
-        android:textColor="#FFFF"
+        android:backgroundTint="@color/Steel_Blue"
+        android:text="Income"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnInsertData" />
+        app:layout_constraintTop_toBottomOf="@+id/btnExpenses" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
