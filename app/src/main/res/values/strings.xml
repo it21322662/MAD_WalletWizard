@@ -15,4 +15,50 @@
     <string name="closebtn">imagebutton</string>
     <string name="logout_desc">logout</string>
     <string name="list_tot_amount_def">list_tot_amount_def</string>
+    <string name="started_title">Hello you!</string>
+    <string name="started_sub_title"> nice to meet you our community !
+    <br><b> Login</b> if you already have and account. </br>
+    <br> <b>Registor</b>  to get start with app. </br>
+    </string>
+    <string name="illustration_img">illustration image</string>
+    <string name="btn_rgister">RGISTER</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="login_tittle">Login to App</string>
+    <string name="login_sub_tittle"><font color="#00C9BB"><b> Login </b></font>if you have and account.</string>
+    <string name="login_email">Your email or user name</string>
+    <string name="login_password">Your password</string>
+    <string name="login_forgot_pw">Forgot Password?</string>
+    <string name="login_havent_account">I don"t have and account?<font color="#00C9BB"><B>Register</B></font>
+    </string>
+    <string name="register_tittle">Create an account</string>
+    <string name="register_sub_tittle"><font color="#00C9BB"><b> Register </b></font>to get start with the app.</string>
+    <string name="register_full_name">your full name</string>
+    <string name="register_email">your email</string>
+    <string name="register_user_">your user name</string>
+    <string name="confirm_password">your password</string>
+    <string name="reconfirm_password">reconfirm password</string>
+    <string name="register">REGISTER</string>
+    <string name="register_have_an_account">I already have an account<font color="#00C9BB"> <b>Login</b> </font></string>
+    <string name="debt_type">debt type</string>
+    <string name="due_date">due date</string>
+    <string name="debt_amount">debt amount</string>
+    <string name="total">total</string>
+    <string name="add">add +/ view + </string>
+    <string name="title_activity_debt_update">debt_update</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="debt_update">update</string>
+    <string name="deb_delete">DELETE</string>
+    <string name="deb_clear">CLEAR</string>
+    <string name="deb_view">VIEW</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="bank_loans">bank loans</string>
+    <string name="personal_loans">personal_loans</string>
+    <string name="leasing">leasing</string>
+    <string name="debt_view">DEBT VIEW</string>
+    <string name="add1">Add</string>
 </resources>
