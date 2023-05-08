@@ -1,8 +1,8 @@
-#Project Name - “WalletWizard” Budgeting Tool Application
-##Group Name - Tech Titans
-###Group Leader - IT21336218 - Fernando W.S.S
-###Member 2 - IT21322662 - Perera M.A.V.D
-###Member 3 - IT21201882 - Senarathne S
+# Project Name - “WalletWizard” Budgeting Tool Application
+## Group Name - Tech Titans
+### Group Leader - IT21336218 - Fernando W.S.S
+### Member 2 - IT21322662 - Perera M.A.V.D
+### Member 3 - IT21201882 - Senarathne S
 
 Brief Description of Project -
 
