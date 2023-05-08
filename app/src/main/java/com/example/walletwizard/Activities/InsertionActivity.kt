@@ -1,11 +1,16 @@
 package com.example.walletwizard.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.walletwizard.models.PersonModel
+import com.example.walletwizard.Activities.MainActivity
+import com.example.walletwizard.Activities.PMainActivity
+import com.example.walletwizard.Models.PersonModel
 import com.example.walletwizard.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -22,6 +27,11 @@ class InsertionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requestWindowFeature(Window. FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar()?.hide();//This Line hides the action bar
+
         setContentView(R.layout.activity_insertion)
 
         etPname= findViewById(R.id.etPname)
@@ -36,7 +46,12 @@ class InsertionActivity : AppCompatActivity() {
             savePersonData()
         }
     }
-
+    private fun validateFields(  pName:String, pBankloans:String, pPerLoan:String,pLeasing:String): Boolean {
+        if (pName.isEmpty() || pBankloans.isEmpty() || pBankloans.isEmpty()|| pPerLoan.isEmpty()||pLeasing.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
     private fun  savePersonData() {
 
         //getting values
@@ -58,6 +73,11 @@ class InsertionActivity : AppCompatActivity() {
             etLeasing.error = "Please enter salary"
         }
 
+        if (!validateFields(pName,pBankloans,pPerLoan,pLeasing)){
+            Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
+            return;
+        }
+
 
         val pId = dbRef.push().key!!
 
@@ -72,6 +92,9 @@ class InsertionActivity : AppCompatActivity() {
                 etPerLoan.text.clear()
                 etLeasing.text.clear()
 
+                val intent = Intent(this, PMainActivity::class.java)
+                finish()
+                startActivity(intent)
 
             }.addOnFailureListener { err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
