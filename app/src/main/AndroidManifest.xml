@@ -19,6 +19,13 @@
         <activity android:name=".Activities.IncomeDetailsActivity" />
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.IncomeMainActivity" />
+        <activity android:name=".Activities.PMainActivity"/>
+        <activity android:name=".activities.PersonDetails"/>
+        <activity android:name=".Activities.FetchingActivity"/>
+        <activity android:name=".activities.PersonList"/>
+        <activity android:name=".activities.UpdateDialog"/>
+        <activity android:name=".activities.InsertionActivity"/>
+
         <activity
             android:name=".Activities.InExMainActivity"
             android:exported="true">

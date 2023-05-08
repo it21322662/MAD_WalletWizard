@@ -30,6 +30,8 @@ class IncomeFetchingActivity : AppCompatActivity() {
     private lateinit var  mainincome : ImageView
     private  lateinit var add : FloatingActionButton
     private  lateinit var incomecal : TextView
+    private  lateinit var debtmain : ImageView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +47,14 @@ class IncomeFetchingActivity : AppCompatActivity() {
         add = findViewById(R.id.fab)
         mainincome = findViewById(R.id.imageView8)
         incomecal = findViewById(R.id.income)
+        debtmain = findViewById(R.id.imgdebt)
+
+
+        debtmain.setOnClickListener {
+            val intent = Intent(this, PMainActivity::class.java)
+            startActivity(intent)
+        }
+
 
         main.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
