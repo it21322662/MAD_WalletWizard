@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PersonDetails">
+    tools:context=".activities.PersonDetails"
+    android:background="@color/material_dynamic_primary90">
+
+    <ImageView
+        android:id="@+id/img_illustration_started2"
+        android:layout_width="325dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="156dp"
+        android:contentDescription="@string/illustration_img"
+        android:src="@drawable/illustration_started"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.682" />
 
     <Button
         android:id="@+id/btnUpdate"
