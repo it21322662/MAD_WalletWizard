@@ -270,7 +270,6 @@
                         android:id="@+id/imageView8"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:layout_centerInParent="true"
                         app:srcCompat="@drawable/ic_income"
                         app:tint="@color/Steel_Blue" />
                 </RelativeLayout>

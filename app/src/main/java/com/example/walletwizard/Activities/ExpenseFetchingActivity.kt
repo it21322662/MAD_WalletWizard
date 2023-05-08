@@ -29,6 +29,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var main : ImageView
     private  lateinit var add : FloatingActionButton
     private  lateinit var expense : TextView
+    private lateinit var  income : ImageView
     private  lateinit var budget : TextView
     private lateinit var balance : TextView
 
@@ -44,6 +45,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
         expense =findViewById(R.id.expense)
+        income = findViewById(R.id.imageView8)
         budget = findViewById(R.id.budget)
         balance = findViewById(R.id.balance)
 
@@ -57,6 +59,11 @@ class ExpenseFetchingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        income.setOnClickListener {
+            val intent = Intent(this, IncomeMainActivity::class.java)
+            startActivity(intent)
+        }
+
         empRecyclerView = findViewById(R.id.receive)
         empRecyclerView.layoutManager = LinearLayoutManager(this)
         empRecyclerView.setHasFixedSize(true)
@@ -67,47 +74,62 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         getExpensesData()
 
 
-
-        var budgetValue =0.0;
-        var expenses = 0.0;
-
-        var total =0.0;
-
-        calculateExpenses { exp ->
-            run {
-                expense.text = exp.toString();
-                expenses = exp;
+        calculateAll(
+            onIncomeSumCalculated = { incomeSum ->
+                budget.text = incomeSum.toString()
+            },
+            onExpenseSumCalculated = { expenseSum ->
+                expense.text = expenseSum.toString()
+            },
+            onBudgetCalculated = { budgetDifference ->
+                balance.text = budgetDifference.toString()
             }
-        }
-        calculateBudget { budg -> run {
-            budget.text = budg.toString();
-            budgetValue = budg;
-        } }
-        println("budgetValue :: :::" + budgetValue + "expensesVal :::::"+ expenses)
-        balance.text = (budgetValue - expenses).toString()
-
+        )
     }
 
-    private fun calculateBudget(callback: (Double) -> Unit) {
-        var sum = 0.0
+    private fun calculateAll(
+        onIncomeSumCalculated: (Double) -> Unit,
+        onExpenseSumCalculated: (Double) -> Unit,
+        onBudgetCalculated: (Double) -> Unit
+    ) {
+        var incomeSum = 0.0
+        var expenseSum = 0.0
 
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
-        var expenseQuery = dbRef.orderByChild("expensesAmount").startAt("-")
-        expenseQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+        var incomeQuery = dbRef.orderByChild("expensesAmount").startAt("+")
+        incomeQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                // Loop through the data and add the amounts with prefix "-"
-                for (expenseSnapshot in snapshot.children) {
+                for (incomeSnapshot in snapshot.children) {
                     val amount =
-                        expenseSnapshot.child("expensesAmount").getValue(String::class.java)
-                    if (amount?.startsWith("-") == true) {
-                        sum += amount.substring(1).toDouble()
+                        incomeSnapshot.child("expensesAmount").getValue(String::class.java)
+                    if (amount?.startsWith("+") == true) {
+                        incomeSum += amount.substring(1).toDouble()
                     }
                 }
-                // Todo:
-                println("Sum of expenses with prefix \"-\": $sum")
+                onIncomeSumCalculated(incomeSum)
 
-                expense.text = sum.toString()
-                callback(sum)
+                dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
+                var expenseQuery = dbRef.orderByChild("expensesAmount").startAt("-")
+                expenseQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        for (expenseSnapshot in snapshot.children) {
+                            val amount =
+                                expenseSnapshot.child("expensesAmount").getValue(String::class.java)
+                            if (amount?.startsWith("-") == true) {
+                                expenseSum += amount.substring(1).toDouble()
+                            }
+                        }
+                        onExpenseSumCalculated(expenseSum)
+
+                        val budgetDifference = incomeSum - expenseSum
+                        onBudgetCalculated(budgetDifference)
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        // Handle any errors
+                        println("error ::::::" + error)
+                    }
+                })
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -116,34 +138,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
             }
         })
     }
-        private fun calculateExpenses(callback: (Double) -> Unit) {
-            var sum = 0.0
 
-            dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
-            var expenseQuery = dbRef.orderByChild("expensesAmount").startAt("+")
-            expenseQuery.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    // Loop through the data and add the amounts with prefix "+"
-                    for (expenseSnapshot in snapshot.children) {
-                        val amount = expenseSnapshot.child("expensesAmount").getValue(String::class.java)
-                        if (amount?.startsWith("+") == true) {
-
-                            sum += amount.substring(1).toDouble()
-                        }
-                    }
-                    // Todo:
-                    println("Sum of expenses with prefix \"+\": $sum")
-
-                    budget.text = sum.toString()
-                    callback(sum)
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    // Handle any errors
-                    println("error ::::::"+error)
-                }
-            })
-    }
 
     private fun getExpensesData() {
 

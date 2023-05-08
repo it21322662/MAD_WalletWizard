@@ -76,7 +76,7 @@ class IncomeDetailsActivity : AppCompatActivity() {
         mTask.addOnSuccessListener {
             Toast.makeText(this, "Income data deleted", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, IncomeFetchingActivity::class.java)
+            val intent = Intent(this, IncomeMainActivity::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{ error ->
@@ -122,6 +122,10 @@ class IncomeDetailsActivity : AppCompatActivity() {
             amount_add.text = etamount.text.toString()
             type_add.text = ettype.text.toString()
             note_add.text = etnote.text.toString()
+
+            val intent = Intent(this, IncomeMainActivity::class.java)
+            finish()
+            startActivity(intent)
 
             alertDialog.dismiss()
         }

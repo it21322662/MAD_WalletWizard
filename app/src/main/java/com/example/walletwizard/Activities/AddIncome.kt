@@ -1,5 +1,6 @@
 package com.example.walletwizard.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
@@ -78,6 +79,11 @@ class AddIncome : AppCompatActivity() {
                 amount.text.clear()
                 note.text.clear()
                 type.text.clear()
+
+                val intent = Intent(this, IncomeMainActivity::class.java)
+                finish()
+                startActivity(intent)
+
             }.addOnFailureListener { err ->
 
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
