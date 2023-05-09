@@ -29,4 +29,8 @@
     <color name="textMain">#292929</color>
     <color name="green">#43A043</color>
     <color name="red">#EE4B2B</color>
+    <color name ="primary_color">#00C9BB</color>
+    <color name="grey">#888888</color>
+    <color name="grey_light">#F0F0F0</color>
+    <color name="yellow">#FFFFE0</color>
 </resources>

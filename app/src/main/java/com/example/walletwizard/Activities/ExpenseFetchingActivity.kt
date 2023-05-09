@@ -32,6 +32,8 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private lateinit var  income : ImageView
     private  lateinit var budget : TextView
     private lateinit var balance : TextView
+    private  lateinit var debtmain : ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,14 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         income = findViewById(R.id.imageView8)
         budget = findViewById(R.id.budget)
         balance = findViewById(R.id.balance)
+        debtmain = findViewById(R.id.imgdebt)
+
+
+
+        debtmain.setOnClickListener {
+            val intent = Intent(this, PMainActivity::class.java)
+            startActivity(intent)
+        }
 
         main.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
