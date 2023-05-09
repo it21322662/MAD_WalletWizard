@@ -136,11 +136,11 @@ class ExpensesDetailsActivity : AppCompatActivity() {
     private fun updateEmpData(
         expensesId : String,
         expensesAmount : String,
-        expensesNote : String,
-        expensesType : String
+        expensesType : String,
+        expensesNote : String
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Expenses").child(expensesId)
-        val empInfo = expensesModel(expensesId, expensesAmount, expensesNote, expensesType)
+        val empInfo = expensesModel(expensesId, expensesAmount, expensesType, expensesNote)
         dbRef.setValue(empInfo)
     }
 }
