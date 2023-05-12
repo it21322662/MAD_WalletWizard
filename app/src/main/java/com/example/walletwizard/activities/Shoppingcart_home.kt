@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.R
@@ -14,7 +12,7 @@ import com.example.walletwizard.adapters.ShCview
 import com.example.walletwizard.models.Shoppingcartmodel
 import com.google.firebase.database.*
 
-class MainActivity : AppCompatActivity() {
+class Shoppingcart_home : AppCompatActivity() {
     private lateinit var rcvcartview: RecyclerView
     //private lateinit var loadingview: TextView
     private lateinit var shCartList:ArrayList<Shoppingcartmodel>
@@ -22,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_cart)
 
         val addCart: ImageButton = findViewById<ImageButton>(R.id.addCart)
         addCart.setOnClickListener {
@@ -61,8 +59,9 @@ class MainActivity : AppCompatActivity() {
                     mAdapter.setOnItemClickListener(object : ShCview.onItemclickListner{
 
                         override fun onItemClick(position: Int) {
-                            val intent = Intent(this@MainActivity, itemview::class.java)
+                            val intent = Intent(this@Shoppingcart_home, itemview::class.java)
 
+                            intent.putExtra("cartId", shCartList[position].cartId)
                             intent.putExtra("itname", shCartList[position].itname)
                             intent.putExtra("quant", shCartList[position].quant)
                             intent.putExtra("price", shCartList[position].price)

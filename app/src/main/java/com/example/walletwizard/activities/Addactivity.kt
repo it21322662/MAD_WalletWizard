@@ -28,7 +28,7 @@ class Addactivity : AppCompatActivity() {
 
         val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrow)
         backarrow.setOnClickListener {
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, Shoppingcart_home::class.java)
             startActivity(i)
         }
 
@@ -70,7 +70,7 @@ class Addactivity : AppCompatActivity() {
             dbRef.child(cartId).setValue(scart)
                 .addOnCompleteListener{
                     Toast.makeText(this,"Data Add Successfully",Toast.LENGTH_LONG).show()
-                    val i = Intent(this,MainActivity::class.java)
+                    val i = Intent(this,Shoppingcart_home::class.java)
                     startActivity(i)
                 }.addOnFailureListener{ err ->
                     Toast.makeText(this,"Error ${err.message}", Toast.LENGTH_LONG).show()

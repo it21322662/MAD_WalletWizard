@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.R
 import com.example.walletwizard.models.Shoppingcartmodel
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class itemview : AppCompatActivity() {
@@ -27,7 +24,7 @@ class itemview : AppCompatActivity() {
 
         val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrow)
         backarrow.setOnClickListener {
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, Shoppingcart_home::class.java)
             startActivity(i)
 
         }
@@ -50,12 +47,12 @@ class itemview : AppCompatActivity() {
     private fun deletRecord(
         cartId: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Shopping Cart").child(cartId)
-        val mTask = dbRef.removeValue()
+        val dbrRef = FirebaseDatabase.getInstance().getReference("Shopping Cart").child(cartId)
+        val mTask = dbrRef.removeValue()
 
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Shopping Cart Delete", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Shoppingcart_home::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener { error ->
@@ -88,16 +85,16 @@ class itemview : AppCompatActivity() {
         mDialog.setView(mDialgView)
 
 
-        val uitname = mDialgView.findViewById<EditText>(R.id.uitname)
-        val uquantity = mDialgView.findViewById<EditText>(R.id.uquantity)
-        val uprice = mDialgView.findViewById<EditText>(R.id.uprice)
-        val udate = mDialgView.findViewById<EditText>(R.id.udate)
+        val upitname = mDialgView.findViewById<EditText>(R.id.uitname)
+        val upquantity = mDialgView.findViewById<EditText>(R.id.uquantity)
+        val upprice = mDialgView.findViewById<EditText>(R.id.uprice)
+        val update = mDialgView.findViewById<EditText>(R.id.udate)
         val btnupdaten = mDialgView.findViewById<Button>(R.id.btnupdtedata)
 
-        uitname.setText(intent.getStringExtra("itname").toString())
-        uquantity.setText(intent.getStringExtra("quant").toString())
-        uprice.setText(intent.getStringExtra("price").toString())
-        udate.setText(intent.getStringExtra("date").toString())
+        upitname.setText(intent.getStringExtra("itname").toString())
+        upquantity.setText(intent.getStringExtra("quant").toString())
+        upprice.setText(intent.getStringExtra("price").toString())
+        update.setText(intent.getStringExtra("date").toString())
 
         mDialog.setTitle("Updating $itname Record")
 
@@ -107,19 +104,19 @@ class itemview : AppCompatActivity() {
         btnupdaten.setOnClickListener {
             updatecart(
                 cartId,
-                uitname.text.toString(),
-                uquantity.text.toString(),
-                uprice.text.toString(),
-                udate.text.toString()
+                upitname.text.toString(),
+                upquantity.text.toString(),
+                upprice.text.toString(),
+                update.text.toString()
             )
         }
 
         Toast.makeText(applicationContext,"Shopping cart updated", Toast.LENGTH_LONG).show()
 
-        vitemname.text = uitname.text.toString()
-        vquantity.text = uquantity.text.toString()
-        vprice.text = uprice.text.toString()
-        vdate.text = udate.text.toString()
+        vitemname.text = upitname.text.toString()
+        vquantity.text = upquantity.text.toString()
+        vprice.text = upprice.text.toString()
+        vdate.text = update.text.toString()
 
         alertDialog.dismiss()
     }
@@ -131,8 +128,8 @@ class itemview : AppCompatActivity() {
         price: String,
         date: String
     ){
-        val dbref = FirebaseDatabase.getInstance().getReference("Shopping Cart").child(cartId)
-        val cartinf = Shoppingcartmodel(itname,quant, price, date)
-        dbref.setValue(cartinf)
+        val dbrref = FirebaseDatabase.getInstance().getReference("Shopping Cart").child(cartId)
+        val cartinf = Shoppingcartmodel(cartId, itname, quant, price, date)
+        dbrref.setValue(cartinf)
     }
 }

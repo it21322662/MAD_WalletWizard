@@ -18,7 +18,7 @@
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.Shoppingcart_home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +29,6 @@
         <activity android:name=".activities.Edit" />
         <activity android:name=".activities.Addactivity" />
         <activity android:name=".activities.itemview" />
-        <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.FetchingActivity"/>
     </application>
 
 </manifest>

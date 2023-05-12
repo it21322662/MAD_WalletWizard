@@ -13,7 +13,7 @@ class Edit : AppCompatActivity() {
 
         val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrow)
         backarrow.setOnClickListener {
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, Shoppingcart_home::class.java)
             startActivity(i)
         }
     }
