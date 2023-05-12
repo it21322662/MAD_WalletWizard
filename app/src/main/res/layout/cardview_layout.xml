@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:backgroundTint="#FFFFFF"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vcrd"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints="List 1"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/Crvitname"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Item Name"
+                    android:shadowRadius="10"
+                    android:textAlignment="center"
+                    android:textSize="25dp">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/Crvrs"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="Rs :"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/edt_txtv"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/Crvprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textSize="25sp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
