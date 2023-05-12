@@ -25,6 +25,10 @@
         <activity android:name=".activities.PersonList"/>
         <activity android:name=".activities.UpdateDialog"/>
         <activity android:name=".activities.InsertionActivity"/>
+        <activity android:name=".activities.Addactivity"/>
+        <activity android:name=".activities.itemview"/>
+        <activity android:name=".activities.Edit"/>
+        <activity android:name=".activities.Shoppingcart_home"/>
 
         <activity
             android:name=".Activities.InExMainActivity"
