@@ -22,10 +22,6 @@
         <activity android:name=".Activities.PMainActivity"/>
         <activity android:name=".Activities.PersonDetails"/>
         <activity android:name=".Activities.FetchingActivity"/>
-        <activity android:name=".Activities.PersonList"/>
-        <activity android:name=".Activities.UpdateDialog"/>
-        <activity android:name=".Activities.InsertionActivity"/>
-        <activity android:name=".Activities.InExMainActivity"/>
 
         <activity
             android:name=".Activities.SplashScreen"

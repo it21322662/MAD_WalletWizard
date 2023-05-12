@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".Activities.InsertionActivity"
-    android:background="@color/material_dynamic_primary90">
 
     <ImageView
         android:id="@+id/img_illustration_started3"
