@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt7">7dp</dimen>
+    <dimen name="tx8">8dp</dimen>
+    <dimen name="tx10">10dp</dimen>
+    <dimen name="tx15">15dp</dimen>
+    <dimen name="tx20">20dp</dimen>
+    <dimen name="tx25">25dp</dimen>
+    <dimen name="tx50">50dp</dimen>
+    <dimen name="tx56">56dp</dimen>
+    <dimen name="tx40">40dp</dimen>
+    <dimen name="tx60">60dp</dimen>
+    <dimen name="tx70">40dp</dimen>
+    <dimen name="tx80">80dp</dimen>
+    <dimen name="tx85">60dp</dimen>
+    <dimen name="tx100">100dp</dimen>
+    <dimen name="tx200">200dp</dimen>
+    <dimen name="tx250">250dp</dimen>
+    <dimen name="tx170">170dp</dimen>
+    <dimen name="tx300">300dp</dimen>
+    <dimen name="tx370">370dp</dimen>
+    <dimen name="tx400">400dp</dimen>
+    <dimen name="tx600">600dp</dimen>
+
+</resources>
