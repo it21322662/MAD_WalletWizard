@@ -7,7 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import com.example.walletwizard.R
-import com.example.walletwizard.activities.InsertionActivity
+import com.example.walletwizard.Activities.InsertionActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 

@@ -41,12 +41,34 @@ class AddExpenses : AppCompatActivity() {
             saveExpenses()
         }
     }
-    private fun validateFields(expensesAmount: String, expensesNote: String, expensesType: String): Boolean {
+    private fun isFieldsEmpty(expensesAmount: String, expensesNote: String, expensesType: String): Boolean {
         if (expensesAmount.isEmpty() || expensesNote.isEmpty() || expensesType.isEmpty()) {
+            return true
+        }
+        return false;
+    }
+
+    private fun isAmountFieldValidated(expAmt: String): Boolean {
+        var pattern = "^[+-]?\\d+$".toRegex()
+        if (!pattern.matches(expAmt)) {
             return false;
         }
-        return true;
+        return true
     }
+
+//    private fun validateFields(expensesAmount: String, expensesNote: String, expensesType: String): List<String> {
+//        val errorMessages = mutableListOf<String>()
+//
+//        var pattern = "^[+-]?\\d+$".toRegex()
+//        if (!expensesAmount.matches(pattern)) {
+//            errorMessages.add("Expenses Amount cannot be letters")
+//        }
+//        if (expensesAmount.isEmpty() || expensesNote.isEmpty() || expensesType.isEmpty()) {
+//            errorMessages.add("Fields cannot be empty")
+//        }
+//
+//        return errorMessages
+//    }
 
     private fun saveExpenses() {
         //getting Values
@@ -65,10 +87,23 @@ class AddExpenses : AppCompatActivity() {
         if (expensesType.isEmpty()) {
             type.error = "Please enter type"
              }
-        if (!validateFields(expensesAmount,expensesNote,expensesType)){
-            Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
+
+//        val errorMessages = validateFields(expensesAmount,expensesNote,expensesType);
+//        if (errorMessages.isNotEmpty()) {
+//            errorMessages.forEach { errMsg ->
+//                Toast.makeText(this, errMsg, Toast.LENGTH_LONG).show()
+//            }
+//            return;
+//        }
+        if (isFieldsEmpty(expensesAmount,expensesNote,expensesType)){
             return;
         }
+//
+        if (!isAmountFieldValidated(expensesAmount)) {
+            Toast.makeText(this, "Please check expense amount format", Toast.LENGTH_LONG).show()
+            return;
+        }
+
         val expensesId = dbRef.push().key!!
         val expenses = expensesModel(expensesId, expensesAmount, expensesNote, expensesType)
        dbRef.child(expensesId).setValue(expenses)

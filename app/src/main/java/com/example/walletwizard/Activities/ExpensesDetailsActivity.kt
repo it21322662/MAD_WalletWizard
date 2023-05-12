@@ -114,8 +114,8 @@ class ExpensesDetailsActivity : AppCompatActivity() {
             updateEmpData(
                 intent.getStringExtra("expensesId").toString(),
                 etamount.text.toString(),
+                etnote.text.toString(),
                 ettype.text.toString(),
-                etnote.text.toString()
             )
 
             Toast.makeText(applicationContext, "Expenses Data Updated", Toast.LENGTH_LONG).show()
@@ -136,11 +136,12 @@ class ExpensesDetailsActivity : AppCompatActivity() {
     private fun updateEmpData(
         expensesId : String,
         expensesAmount : String,
-        expensesType : String,
-        expensesNote : String
+        expensesNote : String,
+        expensesType : String
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Expenses").child(expensesId)
-        val empInfo = expensesModel(expensesId, expensesAmount, expensesType, expensesNote)
+        val empInfo = expensesModel(expensesId, expensesAmount, expensesNote, expensesType)
+        println("empInfo :  "+empInfo)
         dbRef.setValue(empInfo)
     }
 }

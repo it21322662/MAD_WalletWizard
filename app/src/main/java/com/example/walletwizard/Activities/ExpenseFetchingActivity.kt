@@ -177,9 +177,9 @@ class ExpenseFetchingActivity : AppCompatActivity() {
 
                             //put extras
                             intent.putExtra("expensesId", empList[position].expensesId)
-                            intent.putExtra("expensesAmt", empList[position].expensesAmount)
                             intent.putExtra("expensesType", empList[position].expensesType)
                             intent.putExtra("expensesNote", empList[position].expensesNote)
+                            intent.putExtra("expensesAmt", empList[position].expensesAmount)
                             startActivity(intent)
                         }
 

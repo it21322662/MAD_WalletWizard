@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.Adapters.PerAdapter
 import com.example.walletwizard.Models.PersonModel
 import com.example.walletwizard.R
-import com.example.walletwizard.activities.PersonDetails
+import com.example.walletwizard.Activities.PersonDetails
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
