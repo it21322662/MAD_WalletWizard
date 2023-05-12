@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".activities.InsertionActivity">
 
     <ImageView
         android:id="@+id/img_illustration_started3"
@@ -43,6 +42,7 @@
         android:ems="10"
         android:hint="Enter Person Name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,6 +55,7 @@
         android:ems="10"
         android:hint="Enter Bank Loan Amount "
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPname" />
@@ -67,6 +68,7 @@
         android:ems="10"
         android:hint="Enter Person  Amount"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etBankloans" />
@@ -79,6 +81,7 @@
         android:ems="10"
         android:hint="Enter Leasing  Amount"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPerLoan" />

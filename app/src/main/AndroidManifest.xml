@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WalletWizard"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity android:name=".Activities.AddExpenses" />
         <activity android:name=".Activities.ExpenseFetchingActivity" />
@@ -20,18 +20,12 @@
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.IncomeMainActivity" />
         <activity android:name=".Activities.PMainActivity"/>
-        <activity android:name=".activities.PersonDetails"/>
+        <activity android:name=".Activities.PersonDetails"/>
         <activity android:name=".Activities.FetchingActivity"/>
-        <activity android:name=".activities.PersonList"/>
-        <activity android:name=".activities.UpdateDialog"/>
-        <activity android:name=".activities.InsertionActivity"/>
-        <activity android:name=".activities.Addactivity"/>
-        <activity android:name=".activities.itemview"/>
-        <activity android:name=".activities.Edit"/>
-        <activity android:name=".activities.Shoppingcart_home"/>
 
         <activity
-            android:name=".Activities.InExMainActivity"
+            android:name=".Activities.SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

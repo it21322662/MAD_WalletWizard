@@ -1,4 +1,4 @@
-package com.example.walletwizard.activities
+package com.example.walletwizard.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

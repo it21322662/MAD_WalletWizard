@@ -112,8 +112,8 @@ class IncomeDetailsActivity : AppCompatActivity() {
             updateEmpData(
                 intent.getStringExtra("incomeId").toString(),
                 etamount.text.toString(),
+                etnote.text.toString(),
                 ettype.text.toString(),
-                etnote.text.toString()
             )
 
             Toast.makeText(applicationContext, "Income Data Updated", Toast.LENGTH_LONG).show()
