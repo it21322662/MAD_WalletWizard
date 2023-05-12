@@ -20,15 +20,15 @@
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.IncomeMainActivity" />
         <activity android:name=".Activities.PMainActivity"/>
-        <activity android:name=".activities.PersonDetails"/>
+        <activity android:name=".Activities.PersonDetails"/>
         <activity android:name=".Activities.FetchingActivity"/>
-        <activity android:name=".activities.PersonList"/>
-        <activity android:name=".activities.UpdateDialog"/>
-        <activity android:name=".activities.InsertionActivity"/>
-        <activity android:name=".activities.Addactivity"/>
-        <activity android:name=".activities.itemview"/>
-        <activity android:name=".activities.Edit"/>
-        <activity android:name=".activities.Shoppingcart_home"/>
+        <activity android:name=".Activities.PersonList"/>
+        <activity android:name=".Activities.UpdateDialog"/>
+        <activity android:name=".Activities.InsertionActivity"/>
+        <activity android:name=".Activities.Addactivity"/>
+        <activity android:name=".Activities.itemview"/>
+        <activity android:name=".Activities.Edit"/>
+        <activity android:name=".Activities.Shoppingcart_home"/>
 
         <activity
             android:name=".Activities.InExMainActivity"
