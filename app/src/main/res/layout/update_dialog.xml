@@ -81,7 +81,8 @@
 
             <LinearLayout
                 android:layout_width="400dp"
-                android:layout_height="60dp">
+                android:layout_height="60dp"
+                tools:ignore="ExtraText">
                 <TextView
                     android:layout_width="@dimen/tx50"
                     android:layout_height="@dimen/tx50"

@@ -33,4 +33,5 @@
     <color name="grey">#888888</color>
     <color name="grey_light">#F0F0F0</color>
     <color name="yellow">#FFFFE0</color>
+    <color name="material_dynamic_primary90">#dbe9f4</color>
 </resources>
