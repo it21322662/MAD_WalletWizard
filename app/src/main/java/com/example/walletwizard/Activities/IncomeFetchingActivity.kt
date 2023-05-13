@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.Adapters.IncAdapter
 import com.example.walletwizard.Models.incomeModel
 import com.example.walletwizard.R
+import com.example.walletwizard.Activities.Shoppingcart_home
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -31,6 +32,7 @@ class IncomeFetchingActivity : AppCompatActivity() {
     private  lateinit var add : FloatingActionButton
     private  lateinit var incomecal : TextView
     private  lateinit var debtmain : ImageView
+    private  lateinit var shopping : ImageView
 
 
 
@@ -45,9 +47,10 @@ class IncomeFetchingActivity : AppCompatActivity() {
 
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
-        mainincome = findViewById(R.id.imageView8)
+        mainincome = findViewById(R.id.incomeh)
         incomecal = findViewById(R.id.income)
         debtmain = findViewById(R.id.imgdebt)
+        shopping = findViewById(R.id.shopping)
 
 
         debtmain.setOnClickListener {
@@ -68,6 +71,10 @@ class IncomeFetchingActivity : AppCompatActivity() {
 
         mainincome.setOnClickListener {
             val intent = Intent(this, IncomeMainActivity::class.java)
+            startActivity(intent)
+        }
+        shopping.setOnClickListener {
+            val intent = Intent(this, Shoppingcart_home::class.java)
             startActivity(intent)
         }
 

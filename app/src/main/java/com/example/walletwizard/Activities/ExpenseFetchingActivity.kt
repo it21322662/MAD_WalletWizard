@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.Adapters.ExpAdapter
 import com.example.walletwizard.Models.expensesModel
 import com.example.walletwizard.R
+import com.example.walletwizard.Activities.Shoppingcart_home
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,6 +34,7 @@ class ExpenseFetchingActivity : AppCompatActivity() {
     private  lateinit var budget : TextView
     private lateinit var balance : TextView
     private  lateinit var debtmain : ImageView
+    private  lateinit var shopping : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,10 +49,11 @@ class ExpenseFetchingActivity : AppCompatActivity() {
         main = findViewById(R.id.imageView9)
         add = findViewById(R.id.fab)
         expense =findViewById(R.id.expense)
-        income = findViewById(R.id.imageView8)
+        income = findViewById(R.id.incomeh)
         budget = findViewById(R.id.budget)
         balance = findViewById(R.id.balance)
         debtmain = findViewById(R.id.imgdebt)
+        shopping = findViewById(R.id.shopping)
 
 
 
@@ -73,6 +76,11 @@ class ExpenseFetchingActivity : AppCompatActivity() {
             val intent = Intent(this, IncomeMainActivity::class.java)
             startActivity(intent)
         }
+        shopping.setOnClickListener {
+            val intent = Intent(this, Shoppingcart_home::class.java)
+            startActivity(intent)
+        }
+
 
         empRecyclerView = findViewById(R.id.receive)
         empRecyclerView.layoutManager = LinearLayoutManager(this)

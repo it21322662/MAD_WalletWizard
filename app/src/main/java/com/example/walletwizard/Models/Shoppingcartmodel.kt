@@ -1,4 +1,4 @@
-package com.example.walletwizard.models
+package com.example.walletwizard.Models
 
 data class Shoppingcartmodel(
 

@@ -1,4 +1,4 @@
-package com.example.walletwizard.activities
+package com.example.walletwizard.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.example.walletwizard.R
-import com.example.walletwizard.models.Shoppingcartmodel
+import com.example.walletwizard.Models.Shoppingcartmodel
 import com.google.firebase.database.FirebaseDatabase
 
 class itemview : AppCompatActivity() {

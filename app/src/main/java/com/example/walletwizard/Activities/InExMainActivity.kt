@@ -7,11 +7,13 @@ import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.walletwizard.R
+import com.example.walletwizard.Activities.Shoppingcart_home
 
 class InExMainActivity : AppCompatActivity() {
     private lateinit var imageEx : ImageView
     private lateinit var imageIn: ImageView
     private lateinit var imagedebt: ImageView
+    private lateinit var imageshop: ImageView
 
 
 
@@ -28,6 +30,7 @@ class InExMainActivity : AppCompatActivity() {
         imageEx = findViewById(R.id.imageEx)
         imageIn = findViewById(R.id.imageIn)
         imagedebt= findViewById(R.id.imagedebt)
+        imageshop= findViewById(R.id.incomeh)
 
 
         imageEx.setOnClickListener {
@@ -40,8 +43,13 @@ class InExMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        imagedebt.setOnClickListener {
-          val intent = Intent(this, PMainActivity::class.java)
+      imagedebt.setOnClickListener {
+          val intent = Intent(this, PMainActivity::class.java )
+          startActivity(intent)
+      }
+
+        imageshop.setOnClickListener {
+            val intent = Intent(this, Shoppingcart_home::class.java)
             startActivity(intent)
         }
 

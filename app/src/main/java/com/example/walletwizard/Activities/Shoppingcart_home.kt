@@ -1,4 +1,4 @@
-package com.example.walletwizard.activities
+package com.example.walletwizard.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,8 +8,8 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.walletwizard.R
-import com.example.walletwizard.adapters.ShCview
-import com.example.walletwizard.models.Shoppingcartmodel
+import com.example.walletwizard.Adapters.ShCview
+import com.example.walletwizard.Models.Shoppingcartmodel
 import com.google.firebase.database.*
 
 class Shoppingcart_home : AppCompatActivity() {

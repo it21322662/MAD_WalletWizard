@@ -1,4 +1,4 @@
-package com.example.walletwizard.activities
+package com.example.walletwizard.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.example.walletwizard.R
-import com.example.walletwizard.models.Shoppingcartmodel
+import com.example.walletwizard.Models.Shoppingcartmodel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 

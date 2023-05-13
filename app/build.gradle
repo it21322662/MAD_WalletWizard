@@ -49,7 +49,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
 
-//// For Card view
+// For Card view
 //    implementation 'androidx.cardview:cardview:1.0.0'
 //
 //// Chart and graph library
