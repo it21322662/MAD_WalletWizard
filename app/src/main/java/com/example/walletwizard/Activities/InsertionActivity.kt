@@ -20,6 +20,7 @@ class InsertionActivity : AppCompatActivity() {
     private lateinit var etBankloans: EditText
     private lateinit var etPerLoan: EditText
     private lateinit var etLeasing: EditText
+    private lateinit var etTotamount: EditText
     private lateinit var btnSave: Button
 
     private lateinit var dbRef: DatabaseReference
@@ -38,6 +39,7 @@ class InsertionActivity : AppCompatActivity() {
         etBankloans= findViewById(R.id.etBankloans)
         etPerLoan= findViewById(R.id.etPerLoan)
         etLeasing= findViewById(R.id.etLeasing)
+        etTotamount=findViewById(R.id.etTotamount)
         btnSave = findViewById(R.id.btnSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Persons")
@@ -46,8 +48,10 @@ class InsertionActivity : AppCompatActivity() {
             savePersonData()
         }
     }
-    private fun validateFields(  pName:String, pBankloans:String, pPerLoan:String,pLeasing:String): Boolean {
-        if (pName.isEmpty() || pBankloans.isEmpty() || pBankloans.isEmpty()|| pPerLoan.isEmpty()||pLeasing.isEmpty()) {
+    private fun validateFields(  pName:String, pBankloans:String, pPerLoan:String,pLeasing:String,pAmount:String): Boolean {
+        if (pName.isEmpty() || pBankloans.isEmpty() || pBankloans.isEmpty()|| pPerLoan.isEmpty()||pLeasing.isEmpty()||pAmount.isEmpty(
+
+        )) {
             return false;
         }
         return true;
@@ -59,6 +63,8 @@ class InsertionActivity : AppCompatActivity() {
         val pBankloans = etBankloans.text.toString()
         val pPerLoan = etPerLoan.text.toString()
         val pLeasing = etLeasing.text.toString()
+        val pAmount = etTotamount.text.toString()
+
 
         if (pName.isEmpty()) {
             etPname.error = "Please enter name"
@@ -72,8 +78,11 @@ class InsertionActivity : AppCompatActivity() {
         if (pLeasing.isEmpty()) {
             etLeasing.error = "Please enter salary"
         }
+        if (pAmount.isEmpty()) {
+           etTotamount.error = "Please enter salary"
+        }
 
-        if (!validateFields(pName,pBankloans,pPerLoan,pLeasing)){
+        if (!validateFields(pName,pBankloans,pPerLoan,pLeasing,pAmount)){
             Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
             return;
         }
@@ -81,7 +90,7 @@ class InsertionActivity : AppCompatActivity() {
 
         val pId = dbRef.push().key!!
 
-        val person = PersonModel(pId,pName,pBankloans,pPerLoan,pLeasing)
+        val person = PersonModel(pId,pName,pBankloans,pPerLoan,pLeasing,pAmount)
 
         dbRef.child(pId).setValue(person)
             .addOnCompleteListener {
@@ -91,6 +100,7 @@ class InsertionActivity : AppCompatActivity() {
                 etBankloans.text.clear()
                 etPerLoan.text.clear()
                 etLeasing.text.clear()
+                etTotamount.text.clear()
 
                 val intent = Intent(this, PMainActivity::class.java)
                 finish()

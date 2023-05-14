@@ -38,6 +38,14 @@
         android:ems="10"
         android:hint="Leasing"
         android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etTotamount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Total Amount"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnUpdateData"
