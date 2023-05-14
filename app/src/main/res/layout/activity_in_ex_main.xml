@@ -8,10 +8,12 @@
     android:orientation="vertical"
     tools:context=".Activities.InExMainActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/summary_linear"
+        android:layout_marginBottom="-279dp"
         android:background="@drawable/home_square">
 
         <LinearLayout
@@ -143,7 +145,7 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="68dp"
                     android:layout_marginTop="10dp">
 
                     <TextView
@@ -151,8 +153,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppins_light"
-                        android:text="Debt"
                         android:gravity="center"
+                        android:text="Debt"
                         android:textColor="@color/white_back"
                         android:textStyle="bold" />
 
@@ -163,15 +165,14 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/poppins_light"
                         android:text="Shopping Cart"
-                        android:textStyle="bold"
-                        android:textColor="@color/white_back" />
+                        android:textColor="@color/white_back"
+                        android:textStyle="bold" />
                 </TableRow>
 
             </TableLayout>
         </LinearLayout>
 
     </RelativeLayout>
-
 
     <FrameLayout
         android:id="@+id/summary_linear"

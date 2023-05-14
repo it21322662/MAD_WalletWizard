@@ -6,4 +6,5 @@ class PersonModel (
     var pBankloans:String? = null,
     var pPerLoan:String? = null,
     var pLeasing:String? = null,
+    var pAmount:String? = null,
 )

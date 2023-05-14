@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/img_illustration_started3"
-        android:layout_width="325dp"
-        android:layout_height="205dp"
+        android:layout_width="300dp"
+        android:layout_height="132dp"
         android:contentDescription="@string/illustration_img"
         android:src="@drawable/illustration_started"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLeasing"
+        app:layout_constraintTop_toBottomOf="@+id/etTotamount"
         app:layout_constraintVertical_bias="0.682" />
 
     <TextView
@@ -87,6 +87,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPerLoan" />
+
+    <EditText
+        android:id="@+id/etTotamount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Total Amount"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLeasing" />
 
     <Button
         android:id="@+id/btnSave"

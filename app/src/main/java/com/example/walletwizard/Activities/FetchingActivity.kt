@@ -35,6 +35,8 @@ class FetchingActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_fetching)
 
+
+
         pRecyclerView = findViewById(R.id.rvPer)
         pRecyclerView.layoutManager = LinearLayoutManager(this)
         pRecyclerView.setHasFixedSize(true)
@@ -44,7 +46,39 @@ class FetchingActivity : AppCompatActivity() {
 
         getPersonData()
 
+        var debt = 0.0;
+
+        calculateIncome(
+            onTotalIncomeCalculated = { incomeSum -> incomeSum.toString()}
+        )
     }
+
+    private fun calculateIncome(onTotalIncomeCalculated: (Double) -> Unit) {
+        var sum = 0.0
+
+        dbRef = FirebaseDatabase.getInstance().getReference("Income")
+        var incomeQuery = dbRef.orderByChild("incomeAmount")
+        incomeQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                // Loop through the data and add the amounts with prefix "+"
+                for (incomeSnapshot in snapshot.children) {
+                    val amount = incomeSnapshot.child("incomeAmount").getValue(String::class.java)
+                    if (amount !== null) {
+                        sum += amount.toDouble()
+                    }
+                }
+                // Todo:
+                println("Sum of income with prefix \"+\": $sum")
+                onTotalIncomeCalculated(sum)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle any errors
+                println("error ::::::"+error)
+            }
+        })
+    }
+
 
     private fun getPersonData() {
 
@@ -75,6 +109,7 @@ class FetchingActivity : AppCompatActivity() {
                             intent.putExtra("tvBankLoan", personList[position].pBankloans)
                             intent.putExtra("tvPersonalLoan", personList[position].pPerLoan)
                             intent.putExtra("tvLeasing", personList[position].pLeasing)
+                            intent.putExtra("tvTotamount", personList[position].pAmount)
 
                             startActivity(intent)
                         }

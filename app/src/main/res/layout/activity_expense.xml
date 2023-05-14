@@ -261,7 +261,7 @@
                 >
 
                 <RelativeLayout
-                    android:id="@+id/expense_nav"
+                    android:id="@+id/expense_nav1"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -277,7 +277,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/expense_nav"
+                    android:id="@+id/expense_nav2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
