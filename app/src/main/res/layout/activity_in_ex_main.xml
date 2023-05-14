@@ -1,78 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/inexback"
-    tools:context=".activities.InExMainActivity"
-    >
 
-    <TextView
+    android:orientation="vertical"
+    tools:context=".Activities.InExMainActivity">
 
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="WalletWizard"
-        android:textColor="@color/black"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/summary_linear"
+        android:background="@drawable/home_square">
 
-    <Button
-        android:id="@+id/btnExpenses"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:backgroundTint="@color/Steel_Blue"
-        android:text="Expenses"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <LinearLayout
+            android:id="@+id/home_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnIncome"
-        android:layout_width="110dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="@color/Steel_Blue"
-        android:text="Income"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExpenses" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="WalletWizard"
+                android:textColor="@color/white"
+                android:textSize="36sp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btndebt2"
-        android:layout_width="110dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="@color/Steel_Blue"
-        android:text="DEBT"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIncome"
-        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_title_layout"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnshopping"
-        android:layout_width="110dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="@color/Steel_Blue"
-        android:text="Income"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btndebt2" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/blue_border_rounded_cornwe">
+
+                        <ImageView
+                            android:id="@+id/imageIn"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/income" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/blue_border_rounded_cornwe">
+
+                        <ImageView
+                            android:id="@+id/imageEx"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/expenses" />
+                    </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="Income"
+                        android:textColor="@color/white_back"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Expense"
+                        android:textColor="@color/white_back"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/blue_border_rounded_cornwe">
+
+                        <ImageView
+                            android:id="@+id/imagedebt"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/debt" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/blue_border_rounded_cornwe"
+                        android:elevation="100dp">
+
+                        <ImageView
+                            android:id="@+id/incomeh"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/shop" />
+                    </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Debt"
+                        android:gravity="center"
+                        android:textColor="@color/white_back"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Shopping Cart"
+                        android:textStyle="bold"
+                        android:textColor="@color/white_back" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/summary_linear"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+
+</RelativeLayout>

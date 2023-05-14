@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.walletwizard.Models.Shoppingcartmodel
 import com.example.walletwizard.R
+import com.example.walletwizard.Models.Shoppingcartmodel
 
 class ShCview (private val cartdList:ArrayList<Shoppingcartmodel>):
     RecyclerView.Adapter<ShCview.ViewHolder>() {

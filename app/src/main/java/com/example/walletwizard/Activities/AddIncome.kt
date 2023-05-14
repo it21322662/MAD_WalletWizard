@@ -48,6 +48,14 @@ class AddIncome : AppCompatActivity() {
         return true;
     }
 
+    private fun isAmountFieldValidated(expAmt: String): Boolean {
+        var pattern = "^[+-]?\\d+$".toRegex()
+        if (!pattern.matches(expAmt)) {
+            return false;
+        }
+        return true
+    }
+
     private fun saveIncome() {
         //getting Values
         val incomeAmount = amount.text.toString()
@@ -66,9 +74,15 @@ class AddIncome : AppCompatActivity() {
             type.error = "Please enter type"
         }
         if (!validateFields(incomeAmount,incomeNote,incomeType)){
-            Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
             return;
         }
+//
+        if (!isAmountFieldValidated(incomeAmount)) {
+            Toast.makeText(this, "Please check Income amount format", Toast.LENGTH_LONG).show()
+            return;
+        }
+
+
         val incomeId = dbRef.push().key!!
         val income = incomeModel(incomeId, incomeAmount, incomeNote, incomeType)
         dbRef.child(incomeId).setValue(income)

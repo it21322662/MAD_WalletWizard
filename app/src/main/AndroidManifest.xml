@@ -9,29 +9,30 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WalletWizard"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity android:name=".Activities.AddExpenses" />
+        <activity android:name=".Activities.AddIncome" />
+        <activity android:name=".Activities.Addactivity" />
         <activity android:name=".Activities.ExpenseFetchingActivity" />
         <activity android:name=".Activities.ExpensesDetailsActivity" />
-        <activity android:name=".Activities.AddIncome" />
-        <activity android:name=".Activities.IncomeFetchingActivity" />
+        <activity android:name=".Activities.FetchingActivity"/>
+        <activity android:name=".Activities.InExMainActivity"/>
         <activity android:name=".Activities.IncomeDetailsActivity" />
-        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.IncomeFetchingActivity" />
         <activity android:name=".Activities.IncomeMainActivity" />
+        <activity android:name=".Activities.InsertionActivity" />
+        <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.PMainActivity"/>
         <activity android:name=".Activities.PersonDetails"/>
-        <activity android:name=".Activities.FetchingActivity"/>
-        <activity android:name=".Activities.PersonList"/>
-        <activity android:name=".Activities.UpdateDialog"/>
-        <activity android:name=".Activities.InsertionActivity"/>
-        <activity android:name=".Activities.Addactivity"/>
-        <activity android:name=".Activities.itemview"/>
-        <activity android:name=".Activities.Edit"/>
-        <activity android:name=".Activities.Shoppingcart_home"/>
+        <activity android:name=".Activities.PersonList" />
+        <activity android:name=".Activities.Shoppingcart_home" />
+        <activity android:name=".Activities.UpdateDialog" />
+        <activity android:name=".Activities.itemview" />
 
         <activity
-            android:name=".Activities.InExMainActivity"
+            android:name=".Activities.SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

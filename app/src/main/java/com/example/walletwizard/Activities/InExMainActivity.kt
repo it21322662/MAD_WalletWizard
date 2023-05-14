@@ -4,14 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.walletwizard.R
+import com.example.walletwizard.Activities.Shoppingcart_home
 
 class InExMainActivity : AppCompatActivity() {
-    private lateinit var btnExpenses : Button
-    private lateinit var btnIncome: Button
-    private lateinit var btnDebt: Button
+    private lateinit var imageEx : ImageView
+    private lateinit var imageIn: ImageView
+    private lateinit var imagedebt: ImageView
+    private lateinit var imageshop: ImageView
 
 
 
@@ -25,23 +27,29 @@ class InExMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_in_ex_main)
 
 
-        btnExpenses = findViewById(R.id.btnExpenses)
-        btnIncome = findViewById(R.id.btnIncome)
-        btnDebt= findViewById(R.id.btndebt2)
+        imageEx = findViewById(R.id.imageEx)
+        imageIn = findViewById(R.id.imageIn)
+        imagedebt= findViewById(R.id.imagedebt)
+        imageshop= findViewById(R.id.incomeh)
 
 
-        btnExpenses.setOnClickListener {
+        imageEx.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        btnIncome.setOnClickListener {
+        imageIn.setOnClickListener {
             val intent = Intent(this, IncomeMainActivity::class.java)
             startActivity(intent)
         }
 
-      btnDebt.setOnClickListener {
-          val intent = Intent(this, PMainActivity::class.java)
+      imagedebt.setOnClickListener {
+          val intent = Intent(this, PMainActivity::class.java )
+          startActivity(intent)
+      }
+
+        imageshop.setOnClickListener {
+            val intent = Intent(this, Shoppingcart_home::class.java)
             startActivity(intent)
         }
 
