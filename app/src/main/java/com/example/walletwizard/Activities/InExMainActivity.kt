@@ -14,6 +14,7 @@ class InExMainActivity : AppCompatActivity() {
     private lateinit var imageIn: ImageView
     private lateinit var imagedebt: ImageView
     private lateinit var imageshop: ImageView
+    private lateinit var logout : ImageView
 
 
 
@@ -31,6 +32,8 @@ class InExMainActivity : AppCompatActivity() {
         imageIn = findViewById(R.id.imageIn)
         imagedebt= findViewById(R.id.imagedebt)
         imageshop= findViewById(R.id.incomeh)
+        logout = findViewById(R.id.logout)
+
 
 
         imageEx.setOnClickListener {
@@ -50,6 +53,11 @@ class InExMainActivity : AppCompatActivity() {
 
         imageshop.setOnClickListener {
             val intent = Intent(this, Shoppingcart_home::class.java)
+            startActivity(intent)
+        }
+
+        logout.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 

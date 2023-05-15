@@ -1,5 +1,6 @@
 package com.example.walletwizard.Activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Window
@@ -67,9 +68,35 @@ class IncomeDetailsActivity : AppCompatActivity() {
 
     }
 
-    private fun deleteRecord(
-        id: String
-    ){
+//    private fun deleteRecord(
+//        id: String
+//    ){
+//        val dbRef = FirebaseDatabase.getInstance().getReference("Income").child(id)
+//        val mTask = dbRef.removeValue()
+//
+//        mTask.addOnSuccessListener {
+//            Toast.makeText(this, "Income data deleted", Toast.LENGTH_LONG).show()
+//
+//            val intent = Intent(this, IncomeMainActivity::class.java)
+//            finish()
+//            startActivity(intent)
+//        }.addOnFailureListener{ error ->
+//            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+//        }
+//    }
+
+    private fun deleteRecord(id: String) {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("Delete Record")
+        alertDialog.setMessage("Are you sure you want to delete this record?")
+        alertDialog.setPositiveButton("Delete") { dialog: DialogInterface, which: Int ->
+            performDeleteRecord(id)
+        }
+        alertDialog.setNegativeButton("Cancel", null)
+        alertDialog.show()
+    }
+
+    private fun performDeleteRecord(id: String) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Income").child(id)
         val mTask = dbRef.removeValue()
 
@@ -83,6 +110,7 @@ class IncomeDetailsActivity : AppCompatActivity() {
             Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
         }
     }
+
 
     private fun openUpdateDialog(
         empId: String,

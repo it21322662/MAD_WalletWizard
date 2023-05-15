@@ -52,7 +52,7 @@ class FetchingActivity : AppCompatActivity() {
         getPersonData()
 
 
-        var debt = 0.0;
+        var debt = 0.00;
 
         calculateIncome(
             onTotalIncomeCalculated = { incomeSum -> debtcal.text = incomeSum.toString()}
@@ -60,7 +60,7 @@ class FetchingActivity : AppCompatActivity() {
     }
 
     private fun calculateIncome(onTotalIncomeCalculated: (Double) -> Unit) {
-        var sum = 0.0
+        var sum = 0.00
 
         dbRef = FirebaseDatabase.getInstance().getReference("Persons")
         var incomeQuery = dbRef.orderByChild("pamount")
@@ -111,9 +111,9 @@ class FetchingActivity : AppCompatActivity() {
                             //put extras
                             intent.putExtra("tvPid",personList[position].pid)
                             intent.putExtra("tvPName", personList[position].pName)
-                            intent.putExtra("tvBankLoan", personList[position].pBankloans)
-                            intent.putExtra("tvPersonalLoan", personList[position].pPerLoan)
-                            intent.putExtra("tvLeasing", personList[position].pLeasing)
+                            intent.putExtra("tvDebttype", personList[position].pDebttype)
+                            intent.putExtra("tvDate", personList[position].pDate)
+                            intent.putExtra("tvDes", personList[position].pDes)
                             intent.putExtra("tvTotamount", personList[position].pAmount)
 
                             startActivity(intent)
