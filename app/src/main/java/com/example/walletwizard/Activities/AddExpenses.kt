@@ -7,6 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.walletwizard.Models.expensesModel
 import com.example.walletwizard.R
@@ -20,6 +21,7 @@ class AddExpenses : AppCompatActivity() {
     private lateinit var type: EditText
     private lateinit var note: EditText
     private lateinit var addbtn: Button
+    private lateinit var exbackadd : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +36,20 @@ class AddExpenses : AppCompatActivity() {
         type = findViewById(R.id.ettype)
         note = findViewById(R.id.etnote)
         addbtn = findViewById(R.id.expenseSave)
+        exbackadd = findViewById(R.id.exbackadd)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
 
         addbtn.setOnClickListener {
             saveExpenses()
         }
+
+        exbackadd.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
     private fun isFieldsEmpty(expensesAmount: String, expensesNote: String, expensesType: String): Boolean {
         if (expensesAmount.isEmpty() || expensesNote.isEmpty() || expensesType.isEmpty()) {

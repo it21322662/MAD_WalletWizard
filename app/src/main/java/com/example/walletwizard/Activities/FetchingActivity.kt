@@ -37,12 +37,6 @@ class FetchingActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_fetching)
 
-        val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrowf)
-        backarrow.setOnClickListener {
-            val i = Intent(this, PMainActivity::class.java)
-            startActivity(i)
-
-        }
 
         debtcal = findViewById(R.id.debt)
 

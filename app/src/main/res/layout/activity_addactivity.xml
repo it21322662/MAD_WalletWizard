@@ -32,7 +32,7 @@
                 android:layout_marginBottom="40dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/shopping" />
+                android:src="@drawable/shoppingcart" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,19 +48,19 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="410dp"
-            android:layout_height="350dp"
-            android:layout_marginTop="250dp"
+            android:layout_height="490dp"
+            android:layout_marginTop="230dp"
             app:cardBackgroundColor="#B5BFF4"
             app:cardCornerRadius="@dimen/tx20">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="200dp"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
@@ -69,14 +69,14 @@
                     <TextView
                         android:id="@+id/ani"
                         android:layout_width="200dp"
-                        android:layout_height="50dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
                         android:background="#0030AA"
                         android:text="Add Item"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="20dp"></TextView>
+                        android:textSize="25dp"></TextView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -87,7 +87,7 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/edt_textbc"
                     android:hint="Item Name"
-                    android:padding="9dp"
+                    android:padding="14dp"
                     android:textSize="20dp">
 
                 </EditText>
@@ -100,7 +100,7 @@
                     android:background="@drawable/edt_textbc"
                     android:hint="Quantity"
                     android:inputType="number"
-                    android:padding="9dp"
+                    android:padding="14dp"
                     android:textSize="20dp">
 
                 </EditText>
@@ -113,8 +113,9 @@
                     android:background="@drawable/edt_textbc"
                     android:hint="Price"
                     android:inputType="number"
-                    android:padding="9dp"
+                    android:padding="14dp"
                     android:textSize="20dp"/>
+
 
                 <EditText
                     android:id="@+id/setdate"
@@ -122,23 +123,25 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/edt_textbc"
-                    android:ems="20"
+                    android:ems="25"
+                    android:textSize="20dp"
                     android:hint="Date"
-                    android:inputType="date"
-                    android:padding="9dp">
+                    android:inputType="datetime"
+                    android:padding="14dp">
 
                 </EditText>
 
                 <Button
                     android:id="@+id/insert_data"
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
                     android:layout_margin="1dp"
                     android:backgroundTint="#0030AA"
                     android:text="Add"
-                    android:textSize="20dp"
-                    android:textAppearance="?android:textAppearance" />
+                    android:textAppearance="?android:textAppearance"
+                    android:textSize="25dp" />
 
 
             </LinearLayout>

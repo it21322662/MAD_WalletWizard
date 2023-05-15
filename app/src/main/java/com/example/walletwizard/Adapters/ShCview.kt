@@ -50,5 +50,4 @@ class ShCview (private val cartdList:ArrayList<Shoppingcartmodel>):
         }
     }
 
-
 }

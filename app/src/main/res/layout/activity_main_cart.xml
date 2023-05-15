@@ -41,7 +41,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="70dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/shopping" />
+                android:src="@drawable/shoppingcart" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="410dp"
-            android:layout_height="380dp"
+            android:layout_height="490dp"
             android:layout_marginTop="225dp"
             app:cardBackgroundColor="#B5BFF4"
             app:cardCornerRadius="20dp">
@@ -65,11 +65,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvitname"
                 android:layout_width="390dp"
-                android:layout_height="240dp"
+                android:layout_height="350dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="1dp"
                 android:layout_marginEnd="1dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="40dp"
                 tools:listitem="@layout/cardview_layout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
                 android:layout_width="@dimen/tx60"
                 android:layout_height="@dimen/tx60"
                 android:layout_marginLeft="@dimen/tx170"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="400dp"
                 android:background="@drawable/addcolou"
                 android:contentDescription="Add"
                 android:src="@drawable/addm"></ImageButton>

@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.walletwizard.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnInsertData: Button
     private lateinit var btnFetchData: Button
+    private lateinit var exbackbtn : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         btnInsertData = findViewById(R.id.btnInsertData)
         btnFetchData = findViewById(R.id.btnFetchData)
+        exbackbtn = findViewById(R.id.exbackbtn)
 
         btnInsertData.setOnClickListener {
             val intent = Intent(this, AddExpenses::class.java)
@@ -33,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         btnFetchData.setOnClickListener {
             val intent = Intent(this, ExpenseFetchingActivity::class.java)
+            startActivity(intent)
+        }
+
+        exbackbtn.setOnClickListener {
+            val intent = Intent(this, InExMainActivity::class.java)
             startActivity(intent)
         }
 
