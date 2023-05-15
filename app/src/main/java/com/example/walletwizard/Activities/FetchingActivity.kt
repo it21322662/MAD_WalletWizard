@@ -109,9 +109,9 @@ class FetchingActivity : AppCompatActivity() {
                             //put extras
                             intent.putExtra("tvPid",personList[position].pid)
                             intent.putExtra("tvPName", personList[position].pName)
-                            intent.putExtra("tvBankLoan", personList[position].pBankloans)
-                            intent.putExtra("tvPersonalLoan", personList[position].pPerLoan)
-                            intent.putExtra("tvLeasing", personList[position].pLeasing)
+                            intent.putExtra("tvDebttype", personList[position].pDebttype)
+                            intent.putExtra("tvDate", personList[position].pDate)
+                            intent.putExtra("tvDes", personList[position].pDes)
                             intent.putExtra("tvTotamount", personList[position].pAmount)
 
                             startActivity(intent)

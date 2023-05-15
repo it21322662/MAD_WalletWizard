@@ -50,12 +50,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etBankloans"
+        android:id="@+id/etDebttype"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Enter Bank Loan Amount "
+        android:hint="Enter Debt Type "
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,30 +63,30 @@
         app:layout_constraintTop_toBottomOf="@+id/etPname" />
 
     <EditText
-        android:id="@+id/etPerLoan"
+        android:id="@+id/etDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Enter Person  Amount"
+        android:hint="Enter Due Date"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBankloans" />
+        app:layout_constraintTop_toBottomOf="@+id/etDebttype" />
 
     <EditText
-        android:id="@+id/etLeasing"
+        android:id="@+id/etDes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Enter Leasing  Amount"
+        android:hint="Enter description here "
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPerLoan" />
+        app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
     <EditText
         android:id="@+id/etTotamount"
@@ -99,7 +99,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLeasing" />
+        app:layout_constraintTop_toBottomOf="@+id/etDes" />
 
     <Button
         android:id="@+id/btnSave"

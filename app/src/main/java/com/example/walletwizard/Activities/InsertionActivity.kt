@@ -17,9 +17,9 @@ import com.google.firebase.database.FirebaseDatabase
 
 class InsertionActivity : AppCompatActivity() {
     private lateinit var etPname: EditText
-    private lateinit var etBankloans: EditText
-    private lateinit var etPerLoan: EditText
-    private lateinit var etLeasing: EditText
+    private lateinit var etDebttype: EditText
+    private lateinit var etDate: EditText
+    private lateinit var etDes: EditText
     private lateinit var etTotamount: EditText
     private lateinit var btnSave: Button
 
@@ -36,9 +36,9 @@ class InsertionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_insertion)
 
         etPname= findViewById(R.id.etPname)
-        etBankloans= findViewById(R.id.etBankloans)
-        etPerLoan= findViewById(R.id.etPerLoan)
-        etLeasing= findViewById(R.id.etLeasing)
+        etDebttype= findViewById(R.id.etDebttype)
+        etDate= findViewById(R.id.etDate)
+        etDes= findViewById(R.id.etDes)
         etTotamount=findViewById(R.id.etTotamount)
         btnSave = findViewById(R.id.btnSave)
 
@@ -48,8 +48,8 @@ class InsertionActivity : AppCompatActivity() {
             savePersonData()
         }
     }
-    private fun validateFields(  pName:String, pBankloans:String, pPerLoan:String,pLeasing:String,pAmount:String): Boolean {
-        if (pName.isEmpty() || pBankloans.isEmpty() || pBankloans.isEmpty()|| pPerLoan.isEmpty()||pLeasing.isEmpty()||pAmount.isEmpty(
+    private fun validateFields(  pName:String, pDebttype:String, pDate:String,pDes:String,pAmount:String): Boolean {
+        if (pName.isEmpty() || pDebttype.isEmpty() || pDebttype.isEmpty()|| pDate.isEmpty()||pDes.isEmpty()||pAmount.isEmpty(
 
         )) {
             return false;
@@ -67,23 +67,23 @@ class InsertionActivity : AppCompatActivity() {
 
         //getting values
         val pName = etPname.text.toString()
-        val pBankloans = etBankloans.text.toString()
-        val pPerLoan = etPerLoan.text.toString()
-        val pLeasing = etLeasing.text.toString()
+        val pDebttype = etDebttype.text.toString()
+        val pDate = etDate.text.toString()
+        val pDes = etDes.text.toString()
         val pAmount = etTotamount.text.toString()
 
 
         if (pName.isEmpty()) {
             etPname.error = "Please enter name"
         }
-        if (pBankloans.isEmpty()) {
-            etBankloans.error = "Please enter age"
+        if (pDebttype.isEmpty()) {
+            etDebttype.error = "Please enter age"
         }
-        if (pPerLoan.isEmpty()) {
-            etPerLoan.error = "Please enter salary"
+        if (pDate.isEmpty()) {
+            etDate.error = "Please enter salary"
         }
-        if (pLeasing.isEmpty()) {
-            etLeasing.error = "Please enter salary"
+        if (pDes.isEmpty()) {
+            etDes.error = "Please enter salary"
         }
         if (pAmount.isEmpty()) {
            etTotamount.error = "Please enter salary"
@@ -94,7 +94,7 @@ class InsertionActivity : AppCompatActivity() {
             return;
         }
 
-        if (!validateFields(pName,pBankloans,pPerLoan,pLeasing,pAmount)){
+        if (!validateFields(pName,pDebttype,pDate,pDes,pAmount)){
             Toast.makeText(this, "Please Insert All Data", Toast.LENGTH_LONG).show()
             return;
         }
@@ -102,16 +102,16 @@ class InsertionActivity : AppCompatActivity() {
 
         val pId = dbRef.push().key!!
 
-        val person = PersonModel(pId,pName,pBankloans,pPerLoan,pLeasing,pAmount)
+        val person = PersonModel(pId,pName,pDebttype,pDate,pDes,pAmount)
 
         dbRef.child(pId).setValue(person)
             .addOnCompleteListener {
                 Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
                 etPname.text.clear()
-                etBankloans.text.clear()
-                etPerLoan.text.clear()
-                etLeasing.text.clear()
+                etDebttype.text.clear()
+                etDate.text.clear()
+                etDes.text.clear()
                 etTotamount.text.clear()
 
                 val intent = Intent(this, PMainActivity::class.java)
