@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +36,7 @@ class FetchingActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_fetching)
+
 
         debtcal = findViewById(R.id.debt)
 
