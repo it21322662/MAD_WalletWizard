@@ -31,6 +31,8 @@ class PerAdapter(private val PersonList: ArrayList<PersonModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentPer = PersonList[position]
         holder.tvPerName.text = currentPer.pName
+        holder.tvPerprice.text = currentPer.pAmount
+
     }
 
     override fun getItemCount(): Int {
@@ -40,6 +42,7 @@ class PerAdapter(private val PersonList: ArrayList<PersonModel>) :
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         val tvPerName : TextView = itemView.findViewById(R.id.tvPerName)
+        val tvPerprice : TextView = itemView.findViewById(R.id.crvprice)
 
         init {
             itemView.setOnClickListener {

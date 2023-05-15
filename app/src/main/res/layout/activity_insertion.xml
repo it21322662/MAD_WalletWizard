@@ -20,6 +20,18 @@
         app:layout_constraintTop_toBottomOf="@+id/etTotamount"
         app:layout_constraintVertical_bias="0.682" />
 
+    <ImageButton
+        android:id="@+id/bcarrowf"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#1C9C06"
+        android:contentDescription="Add"
+        android:src="@drawable/backarrow"
+        tools:layout_editor_absoluteX="343dp"
+        tools:layout_editor_absoluteY="-2dp">
+
+    </ImageButton>
+
     <TextView
         android:id="@+id/tv_started_title2"
         android:layout_width="275dp"
@@ -105,7 +117,6 @@
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:text="Save Data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
