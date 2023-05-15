@@ -4,9 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundexp"
     tools:context=".Activities.MainActivity"
+    android:background="@color/Azure"
     >
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundexp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8"/>
 
     <TextView
 
@@ -46,5 +59,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnInsertData" />
+
+    <ImageView
+        android:id="@+id/exbackbtn"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_dialog" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.walletwizard.Models.incomeModel
@@ -20,6 +21,7 @@ class AddIncome : AppCompatActivity() {
     private lateinit var type: EditText
     private lateinit var note: EditText
     private lateinit var addbtn: Button
+    private lateinit var incomebackbtn : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +36,20 @@ class AddIncome : AppCompatActivity() {
         type = findViewById(R.id.ettype)
         note = findViewById(R.id.etnote)
         addbtn = findViewById(R.id.incomeSave)
+        incomebackbtn = findViewById(R.id.back)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Income")
 
         addbtn.setOnClickListener {
             saveIncome()
         }
+
+        incomebackbtn.setOnClickListener {
+            val intent = Intent(this, IncomeMainActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
     private fun validateFields(incomeAmount: String, incomeNote: String, expensesType: String): Boolean {
         if (incomeAmount.isEmpty() || incomeNote.isEmpty() || expensesType.isEmpty()) {

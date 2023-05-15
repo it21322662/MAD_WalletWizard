@@ -39,6 +39,14 @@
             android:layout_marginBottom="41dp"
             android:background="@drawable/expenses" />
 
+        <ImageView
+            android:id="@+id/exbackadd"
+            android:layout_width="37dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="4dp"
+            app:srcCompat="@drawable/inexbaseline_close_24" />
+
     </RelativeLayout>
 
     <RelativeLayout
