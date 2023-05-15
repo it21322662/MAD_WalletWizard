@@ -18,9 +18,9 @@ import com.google.firebase.database.FirebaseDatabase
 class PersonDetails : AppCompatActivity() {
     private lateinit var tvpId: TextView
     private lateinit var tvPName: TextView
-    private lateinit var tvBankLoan: TextView
-    private lateinit var tvPersonalLoan: TextView
-    private lateinit var tvLeasing: TextView
+    private lateinit var tvDebttype: TextView
+    private lateinit var tvDate: TextView
+    private lateinit var tvDes: TextView
     private lateinit var tvTotamount: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
@@ -71,9 +71,9 @@ class PersonDetails : AppCompatActivity() {
     private fun initView() {
         tvpId = findViewById(R.id.tvpId)
         tvPName = findViewById(R.id.tvPName)
-        tvBankLoan = findViewById(R.id.tvBankLoan)
-        tvPersonalLoan = findViewById(R.id.tvPersonalLoan)
-        tvLeasing = findViewById(R.id.tvLeasing)
+        tvDebttype = findViewById(R.id.tvDebttype)
+        tvDate = findViewById(R.id.tvDate)
+        tvDes = findViewById(R.id.tvDes)
         tvTotamount = findViewById(R.id.tvTotamount)
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
@@ -82,9 +82,9 @@ class PersonDetails : AppCompatActivity() {
     private fun setValuesToViews() {
         tvpId.text = intent.getStringExtra("tvPid")
         tvPName.text = intent.getStringExtra("tvPName")
-        tvBankLoan.text = intent.getStringExtra("tvBankLoan")
-        tvPersonalLoan.text = intent.getStringExtra("tvPersonalLoan")
-        tvLeasing.text = intent.getStringExtra("tvLeasing")
+        tvDebttype.text = intent.getStringExtra("tvDebttype")
+        tvDate.text = intent.getStringExtra("tvDate")
+       tvDes.text = intent.getStringExtra("tvDes")
         tvTotamount.text = intent.getStringExtra("tvTotamount")
     }
 
@@ -99,16 +99,16 @@ class PersonDetails : AppCompatActivity() {
         mDialog.setView(mDialogView)
 
         val etpNames = mDialogView.findViewById<EditText>(R.id.etpNames)
-        val etBankloanss = mDialogView.findViewById<EditText>(R.id.etBankloanss)
-        val etPerLoans = mDialogView.findViewById<EditText>(R.id.etPerLoans)
-        val etLeasings = mDialogView.findViewById<EditText>(R.id.etLeasings)
+        val etDebttypes = mDialogView.findViewById<EditText>(R.id.etDebttype)
+        val etDates = mDialogView.findViewById<EditText>(R.id.etDate)
+        val etDess = mDialogView.findViewById<EditText>(R.id.etDes)
         val etTotamount = mDialogView.findViewById<EditText>(R.id.etTotamount)
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
         etpNames.setText(intent.getStringExtra("tvPName").toString())
-        etBankloanss.setText(intent.getStringExtra("tvBankLoan").toString())
-        etPerLoans.setText(intent.getStringExtra("tvPersonalLoan").toString())
-        etLeasings.setText(intent.getStringExtra("tvLeasing").toString())
+        etDebttypes.setText(intent.getStringExtra("tvDebttype").toString())
+        etDates.setText(intent.getStringExtra("tvDate").toString())
+        etDess.setText(intent.getStringExtra("tvDes").toString())
         etTotamount.setText(intent.getStringExtra("tvTotamount").toString())
 
 
@@ -122,9 +122,9 @@ class PersonDetails : AppCompatActivity() {
             updatePersonData(
                 pId,
                 etpNames.text.toString(),
-                etBankloanss.text.toString(),
-                etPerLoans.text.toString(),
-                etLeasings.text.toString(),
+                etDebttypes.text.toString(),
+                etDates.text.toString(),
+                etDess.text.toString(),
                 etTotamount.text.toString()
 
 
@@ -134,9 +134,9 @@ class PersonDetails : AppCompatActivity() {
             //we are setting updated data to our textviews
 
             tvPName.text = etpNames.text.toString()
-            tvBankLoan.text = etBankloanss.text.toString()
-            tvPersonalLoan.text = etPerLoans.text.toString()
-            tvLeasing.text = etLeasings.text.toString()
+           tvDebttype.text = etDebttypes.text.toString()
+           tvDate.text = etDates.text.toString()
+            tvDes.text = etDess.text.toString()
             tvTotamount.text = etTotamount.text.toString()
 
             alertDialog.dismiss()
@@ -147,14 +147,14 @@ class PersonDetails : AppCompatActivity() {
     private fun updatePersonData(
         id: String,
         pname: String,
-        bankloan: String,
-        personalloan: String,
-        leasing: String,
+        debttype: String,
+        date: String,
+        des: String,
         totamount:String
 
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Persons").child(id)
-        val perInfo = PersonModel(id, pname, bankloan, personalloan, leasing,totamount)
+        val perInfo = PersonModel(id, pname, debttype, date, des,totamount)
         dbRef.setValue(perInfo)
     }
 
