@@ -34,11 +34,17 @@ class Shoppingcart_home : AppCompatActivity() {
             startActivity(i)
        }
 
+        val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrow)
+        backarrow.setOnClickListener {
+            val i = Intent(this, InExMainActivity::class.java)
+            startActivity(i)
+
+        }
+
 
         rcvcartview = findViewById(R.id.rvitname)
         rcvcartview.layoutManager = LinearLayoutManager(this)
         rcvcartview.setHasFixedSize(true)
-        //loadingview = findViewById(R.id.tvLoadingData)
 
         shCartList = arrayListOf<Shoppingcartmodel>()
 

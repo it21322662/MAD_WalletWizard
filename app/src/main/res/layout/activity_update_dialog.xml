@@ -15,28 +15,28 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etBankloanss"
+        android:id="@+id/etDebttype"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Bank Loan" />
+        android:hint="Debt Type" />
 
     <EditText
-        android:id="@+id/etPerLoans"
+        android:id="@+id/etDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Pearsonal Loan"
+        android:hint="Due Date"
         android:inputType="textPersonName" />
     <EditText
-        android:id="@+id/etLeasings"
+        android:id="@+id/etDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Leasing"
+        android:hint="Description"
         android:inputType="textPersonName" />
     <EditText
         android:id="@+id/etTotamount"
