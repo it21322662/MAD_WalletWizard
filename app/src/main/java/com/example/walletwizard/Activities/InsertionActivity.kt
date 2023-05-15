@@ -56,6 +56,13 @@ class InsertionActivity : AppCompatActivity() {
         }
         return true;
     }
+    private fun isAmountFieldValidated(expAmt: String): Boolean {
+        var pattern = "^[+-]?\\d+$".toRegex()
+        if (!pattern.matches(expAmt)) {
+            return false;
+        }
+        return true
+    }
     private fun  savePersonData() {
 
         //getting values
@@ -80,6 +87,11 @@ class InsertionActivity : AppCompatActivity() {
         }
         if (pAmount.isEmpty()) {
            etTotamount.error = "Please enter salary"
+        }
+
+        if (!isAmountFieldValidated(pAmount)) {
+            Toast.makeText(this, "Please check Income amount format", Toast.LENGTH_LONG).show()
+            return;
         }
 
         if (!validateFields(pName,pBankloans,pPerLoan,pLeasing,pAmount)){

@@ -25,6 +25,7 @@ class FetchingActivity : AppCompatActivity() {
     private lateinit var tvLoadingData: TextView
     private lateinit var personList: ArrayList<PersonModel>
     private lateinit var dbRef: DatabaseReference
+    private  lateinit var debtcal : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,8 @@ class FetchingActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_fetching)
+
+        debtcal = findViewById(R.id.debt)
 
 
 
@@ -46,23 +49,24 @@ class FetchingActivity : AppCompatActivity() {
 
         getPersonData()
 
+
         var debt = 0.0;
 
         calculateIncome(
-            onTotalIncomeCalculated = { incomeSum -> incomeSum.toString()}
+            onTotalIncomeCalculated = { incomeSum -> debtcal.text = incomeSum.toString()}
         )
     }
 
     private fun calculateIncome(onTotalIncomeCalculated: (Double) -> Unit) {
         var sum = 0.0
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Income")
-        var incomeQuery = dbRef.orderByChild("incomeAmount")
+        dbRef = FirebaseDatabase.getInstance().getReference("Persons")
+        var incomeQuery = dbRef.orderByChild("pamount")
         incomeQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // Loop through the data and add the amounts with prefix "+"
                 for (incomeSnapshot in snapshot.children) {
-                    val amount = incomeSnapshot.child("incomeAmount").getValue(String::class.java)
+                    val amount = incomeSnapshot.child("pamount").getValue(String::class.java)
                     if (amount !== null) {
                         sum += amount.toDouble()
                     }
@@ -78,7 +82,6 @@ class FetchingActivity : AppCompatActivity() {
             }
         })
     }
-
 
     private fun getPersonData() {
 
