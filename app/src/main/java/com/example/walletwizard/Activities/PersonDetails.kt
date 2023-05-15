@@ -7,6 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -34,6 +35,13 @@ class PersonDetails : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_person_details)
+
+        val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrowf)
+        backarrow.setOnClickListener {
+            val i = Intent(this, FetchingActivity::class.java)
+            startActivity(i)
+
+        }
 
         initView()
         setValuesToViews()

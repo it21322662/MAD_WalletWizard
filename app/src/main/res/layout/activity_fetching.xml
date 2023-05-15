@@ -21,34 +21,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/bcarrowf"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="Add"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#1C9C06"
+            android:src="@drawable/backarrow">
+        </ImageButton>
+
         <LinearLayout
+            style="@style/AppTheme"
             android:layout_width="match_parent"
             android:layout_height="217dp"
             android:orientation="vertical"
-            android:background="@drawable/rounded_corners"
-            style="@style/AppTheme"
             android:padding="12dp">
 
+
             <TextView
-                style="@style/Widget.AppCompat.TextView.SpinnerItem"
-                android:layout_width="292dp"
-                android:layout_height="81dp"
-                android:background="@drawable/rounded_corners"
-                android:backgroundTintMode="screen"
+                android:layout_width="246dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="50dp"
                 android:text="TOTAL DEBT"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30dp" />
 
             <TextView
                 android:id="@+id/debt"
-                android:layout_width="227dp"
-                android:layout_height="67dp"
-                android:background="@drawable/rounded_corners"
+                android:layout_width="372dp"
+                android:layout_height="98dp"
                 android:text="Rs 0.0"
                 android:textColor="@color/green"
-                android:textSize="35sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

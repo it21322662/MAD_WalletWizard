@@ -7,6 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.example.walletwizard.Activities.MainActivity
 import com.example.walletwizard.Activities.PMainActivity
@@ -34,6 +35,13 @@ class InsertionActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_insertion)
+
+        val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrowf)
+        backarrow.setOnClickListener {
+            val i = Intent(this, PMainActivity::class.java)
+            startActivity(i)
+
+        }
 
         etPname= findViewById(R.id.etPname)
         etDebttype= findViewById(R.id.etDebttype)
