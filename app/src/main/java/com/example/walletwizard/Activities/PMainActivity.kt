@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageButton
 import com.example.walletwizard.R
 import com.example.walletwizard.Activities.InsertionActivity
 import com.google.firebase.database.DatabaseReference
@@ -25,6 +26,14 @@ class PMainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide();//This Line hides the action bar
 
         setContentView(R.layout.activity_pmain)
+
+        val backarrow: ImageButton = findViewById<ImageButton>(R.id.bcarrowf)
+        backarrow.setOnClickListener {
+            val i = Intent(this, InExMainActivity::class.java)
+            startActivity(i)
+
+        }
+
 
         val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
 

@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color">
 
+
+    <ImageButton
+        android:id="@+id/bcarrowf"
+        android:layout_width="44dp"
+        android:layout_height="33dp"
+        android:backgroundTint="#1C9C06"
+        android:contentDescription="Add"
+        android:src="@drawable/backarrow"
+        tools:layout_editor_absoluteX="360dp"
+        tools:layout_editor_absoluteY="-2dp"></ImageButton>
+
     <TextView
         android:id="@+id/tv_started_title"
         android:layout_width="match_parent"
@@ -44,7 +55,7 @@
         android:src="@drawable/illustration_started"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
