@@ -50,7 +50,7 @@ class FetchingActivity : AppCompatActivity() {
         getPersonData()
 
 
-        var debt = 0.0;
+        var debt = 0.00;
 
         calculateIncome(
             onTotalIncomeCalculated = { incomeSum -> debtcal.text = incomeSum.toString()}
@@ -58,7 +58,7 @@ class FetchingActivity : AppCompatActivity() {
     }
 
     private fun calculateIncome(onTotalIncomeCalculated: (Double) -> Unit) {
-        var sum = 0.0
+        var sum = 0.00
 
         dbRef = FirebaseDatabase.getInstance().getReference("Persons")
         var incomeQuery = dbRef.orderByChild("pamount")
