@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@color/primary_color"
         app:cardCornerRadius="12dp"
         app:layout_constraintBottom_toTopOf="@+id/rvPer"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +23,14 @@
             android:layout_width="match_parent"
             android:layout_height="217dp"
             android:orientation="vertical"
+            style="@style/AppTheme"
             android:padding="12dp">
 
             <TextView
                 android:layout_width="246dp"
                 android:layout_height="45dp"
                 android:text="TOTAL DEBT"
+                android:background="@color/Blue"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="17sp" />
