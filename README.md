@@ -22,7 +22,7 @@ most individuals have smartphones, they may use this software to calculate their
 and obligations as well as handle their monthly payments with ease.
 
 There are four main functionalities we identified in this system.
-• Income Management
-• Expenses Management
-• Debt Management
-• Shopping List Management
+#### Income Management
+#### Expenses Management
+#### Debt Management
+#### Shopping List Management
